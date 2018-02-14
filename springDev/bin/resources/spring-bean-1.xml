@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+ xmlns:util="http://www.springframework.org/schema/util"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd" >
+
+<bean id="dataTypeObj" class="springDev.java.com.DataTypes">
+<property name="vector">
+<util:list list-class="java.util.Vector">
+<value>Apple</value>
+<value>Mango</value>
+</util:list>
+</property>
+
+<property name="set">
+<util:set set-class="java.util.TreeSet">
+<value>Chair</value>
+<value>Table</value>
+</util:set>
+</property>
+
+<property name="driver">
+<util:properties location="classpath:resources/Drivers.properties"/>
+</property>
+</bean>
+</beans>

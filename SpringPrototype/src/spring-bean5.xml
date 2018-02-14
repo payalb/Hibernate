@@ -1,0 +1,50 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:util = "http://www.springframework.org/schema/util"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/util
+   http://www.springframework.org/schema/util/spring-util.xsd">
+ <context:component-scan  base-package="com.java.model"></context:component-scan>
+ 
+ <util:map id="subjects" key-type="java.lang.String" value-type="java.lang.Integer">
+  <entry key="Maths" value="10"/>
+</util:map>
+<!-- <bean name="student1" class="com.java.model.Student3" >
+<property name="rollNo" value="1"></property>
+<property name="name" value="Rahul"></property>
+<property name="subjects">
+<map>
+<entry key="Maths" value="88"></entry>
+<entry key="Science" value="92"></entry>
+</map>
+
+</property>
+</bean>
+
+<bean name="student2" class="com.java.model.Student3" depends-on="student1">
+<property name="rollNo" value="2"></property>
+<property name="name" value="Ravi"></property>
+<property name="subjects">
+<map>
+<entry key="Commerce" value="43"></entry>
+<entry key="Science" value="74"></entry>
+</map>
+</property>
+</bean>
+ <bean name="teacher" class="com.java.model.Teacher3"
+ depends-on="student2" scope="prototype" init-method="initialize" destroy-method="destroy">
+ <property name="id" value="1"/>
+ <property name="name" value="Shweta"/>
+ <property name="students">
+ <list>
+ <ref bean="student1"></ref>
+ <ref bean="student2"></ref>
+ </list>
+ 
+ </property>
+ </bean> -->
+</beans>

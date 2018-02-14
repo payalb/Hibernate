@@ -1,0 +1,13 @@
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.5//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> 
+<beans> 
+<!-- To activate autowire annotation -->
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+<bean id="engine1" class="springDev.java.com.day2.Engine1">
+<property name="modelYear" value="2005"/>
+</bean>
+<bean id="engine2" class="springDev.java.com.day2.Engine1" >
+<property name="modelYear" value="2007"/>
+</bean>
+<bean id="car" class="springDev.java.com.day2.Car1" />
+
+</beans>

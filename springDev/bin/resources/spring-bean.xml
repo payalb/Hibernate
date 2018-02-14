@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> 
+<beans>
+
+<bean id="shape" class="springDev.java.com.Triangle" scope="singleton">
+<constructor-arg type="int" index="1" value="10"/>
+<constructor-arg  type= "java.lang.String" value="Equilateral"/>
+</bean>
+
+<bean id="shapeOne" class="springDev.java.com.Triangle" scope="singleton">
+<constructor-arg type="int" index="1" value="20"/>
+<constructor-arg  type= "java.lang.String" value="Isoceles"/>
+</bean>
+
+<bean id="helloGender" class="springDev.java.com.HelloGender" >
+<property name="gender" >
+<value>Male</value>
+</property>
+<!--  <property name="gender"><value>Payal.bansal@gmail.com</value></property>  -->
+</bean>
+
+<bean id="constrInjectionObj" class="springDev.java.com.ConstrInjection" >
+ <constructor-arg value="10"  index="1"></constructor-arg>
+ <constructor-arg value="abc" index="0"></constructor-arg>
+<!-- <constructor-arg value="10" type="int" index="1"></constructor-arg>
+ <constructor-arg value="abc" type="java.lang.String"></constructor-arg> -->
+<!-- <constructor-arg value="10" type="int"></constructor-arg> -->
+
+</bean>
+
+<bean id="shape1" class="springDev.java.com.Circle" scope="prototype">
+<property name="list" >
+<list>
+<value> 12</value>
+<value> 23</value>
+<value> 62</value>
+</list>
+</property>
+   <property name="addressSet">
+         <set>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+        </set>
+      </property>
+
+      <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name="addressMap">
+         <map>
+            <entry key="1" value="INDIA"/>
+            <entry key="2" value="Pakistan"/>
+            <entry key="3" value="USA"/>
+            <entry key="4" value="USA"/>
+         </map>
+      </property>
+      
+      <!-- results in a setAddressProp(java.util.Properties) call -->
+      <!-- Cannot read external property file data  in dtd config.-->
+      <property name="addressProp">
+         <props>
+            <prop key="one">INDIA</prop>
+            <prop key="two">Pakistan</prop>
+            <prop key="three">USA</prop>
+            <prop key="four">USA</prop>
+         </props>
+      </property>
+
+</bean>
+
+<bean id="dataTypeObj" class="springDev.java.com.DataTypes">
+<property name="circle" ref="shape1"></property>
+<!-- <property name="circle">
+<bean  class="springDev.java.com.Circle">
+<property name="list" >
+<list>
+<value> 12</value>
+<value> 23</value>
+<value> 62</value>
+</list>
+</property>
+</bean></property> -->
+<property name="name"><value>Round</value></property>
+<property name="intArray">
+<list>
+<value>ABC</value>
+<value>DEF</value>
+</list>
+</property>
+<property name="triangle">
+<list >
+<ref bean="shape"/>
+<ref bean="shapeOne"/>
+</list>
+</property>
+</bean>
+
+</beans>

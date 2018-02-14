@@ -1,0 +1,10 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+ xmlns:p="http://www.springframework.org/schema/p" 
+  xmlns:c="http://www.springframework.org/schema/c" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd" >
+<bean id="triangle" class="springDev.java.com.Triangle" c:name="Wagonr" c:length="10"/>
+<bean id="depCheck3" class="springDev.java.com.day2.DepCheck3" p:name="ABC" p:triangle-ref="triangle"/>
+<!-- for constructor, use xmlns: c, c:name, c:triangle-ref -->
+
+</beans>

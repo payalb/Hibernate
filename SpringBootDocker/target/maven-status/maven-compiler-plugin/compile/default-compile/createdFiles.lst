@@ -1,0 +1,6 @@
+com\java\repository\StudentInitializer.class
+com\java\model\Student.class
+com\java\MyClient.class
+com\java\controller\StudentController.class
+com\java\model\Quotes.class
+com\java\repository\StudentRepository.class

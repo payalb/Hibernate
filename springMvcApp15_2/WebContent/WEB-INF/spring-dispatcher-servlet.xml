@@ -1,0 +1,37 @@
+
+ <beans xmlns="http://www.springframework.org/schema/beans" 
+ xmlns:context="http://www.springframework.org/schema/context" 
+ xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/mvc
+ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<context:component-scan base-package="com.java"/>
+<mvc:annotation-driven/>
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="suffix"><value>.jsp</value></property>
+<property name="prefix"><value>/WEB-INF/</value></property>
+</bean>
+
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+<property name="basenames" value="message"></property>
+<property name="defaultEncoding" value="UTF-8"></property>
+</bean>
+<!-- will save the locale info in cookie. Can also use SessionLocaleResolver -->
+<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+	<property name="defaultLocale" value="en"></property>
+	<property name="cookieName" value="myLocalCookie"></property>
+	<property name="cookieMaxAge" value="3600"></property>
+</bean>
+<mvc:interceptors>
+<bean id="interceptor" class="com.java.component.MyInterceptor"></bean>
+<!-- Intercept user request, identify user locale, change user locale -->
+<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+	<property name="paramName" value="lang"></property>
+</bean>
+</mvc:interceptors>
+</beans>

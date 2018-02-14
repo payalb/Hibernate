@@ -1,0 +1,21 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="address" class="com.java.core.dao.Address">
+		<constructor-arg index="1" value="Delhi Road" />
+		<constructor-arg index="0" value="10R" />
+		<constructor-arg index="2" value="Meerut" />
+		<constructor-arg index="3" value="UttarPradesh" />
+		<constructor-arg index="4" value="250002" />
+	</bean>
+
+	<bean id="person" class="com.java.core.dao.Person">
+		<constructor-arg name="name" value="Payal" />
+		<constructor-arg name="aadharCardNo" value="GHF73464" />
+		<property name="address" ref="address" />
+	</bean>
+
+<bean class="com.java.core.config.MyBeanPostProcessor"/>
+</beans> -->

@@ -1,0 +1,17 @@
+
+ <beans xmlns="http://www.springframework.org/schema/beans" 
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="student" class="com.java.model.Student" >
+<property name="rollNo" value="1"></property>
+<property name="name" value="Rahul"></property>
+</bean>
+ <bean name="teacher" class="com.java.model.Teacher1"
+  depends-on="student" autowire="byType">
+ <property name="id" value="1"/>
+ <property name="name" value="Shweta"/>
+ </bean>
+</beans>

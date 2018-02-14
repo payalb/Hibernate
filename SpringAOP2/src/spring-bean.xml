@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> 
+<beans>
+<bean id="business" class="com.java.business.MessageProcessor"/>
+<bean id="afterMethodService" class="com.java.services.AfterBusinessAdvice"/>
+<bean id="beforeMethodService" class="com.java.services.LoggerService"/>
+<bean id="aroundMethodService" class="com.java.services.AroundBusinessAdvice"/>
+<bean id="exceptionHandling" class="com.java.services.ExceptionHandling"/>
+<bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="target" ref="business"/>
+<property name="interceptorNames">
+<list>
+<value>afterMethodService</value>
+<value>beforeMethodService</value>
+<value>aroundMethodService</value>
+<value>exceptionHandling</value>
+</list>
+</property>
+</bean>
+</beans>

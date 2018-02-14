@@ -1,0 +1,29 @@
+
+ <beans xmlns="http://www.springframework.org/schema/beans" 
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="student1" class="com.java.model.Student" >
+<property name="rollNo" value="1"></property>
+<property name="name" value="Rahul"></property>
+</bean>
+
+<bean name="student2" class="com.java.model.Student" depends-on="student1">
+<property name="rollNo" value="2"></property>
+<property name="name" value="Ravi"></property>
+</bean>
+ <bean name="teacher" class="com.java.model.Teacher2"
+ depends-on="student2">
+ <property name="id" value="1"/>
+ <property name="name" value="Shweta"/>
+ <property name="students">
+ <list>
+ <ref bean="student1"></ref>
+ <ref bean="student2"></ref>
+ </list>
+ 
+ </property>
+ </bean>
+</beans>

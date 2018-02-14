@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> 
+<beans>
+<bean id="depCheck" class="springDev.java.com.day2.DepCheck" dependency-check="simple">
+<!-- must pass values for simple primitive types -->
+<property name="name" value="TestOne"/>
+<property name="no" value="10"/>
+</bean>
+
+<bean id="depCheck1" class="springDev.java.com.day2.DepCheck1">
+<!-- must pass values for required annotated methods -->
+<property name="name" value="TestOne"/>
+</bean>
+
+
+<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+</beans>

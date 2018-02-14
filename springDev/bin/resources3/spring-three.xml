@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+ xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd" >
+<bean id="three" class="day3.Three" >
+<property name="pointA">
+<bean  class="day3.Point">
+<property name="x" value="${pointA.x}"/>
+<property name="y" value="${pointA.y}"/>
+</bean>
+</property>
+</bean>
+<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/> -->
+
+<context:annotation-config/>
+<bean class="day3.OneBeanPostProcessor"/>
+
+<bean class="day3.OneBeanFactoryPostProcessor"/>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="locations" value="classpath:resources3/One.properties"/>
+<
+</bean>
+
+</beans>
+

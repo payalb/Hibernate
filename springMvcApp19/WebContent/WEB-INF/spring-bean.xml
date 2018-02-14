@@ -1,0 +1,16 @@
+
+ <beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<!-- By default takes lowercase for form -->
+<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+<property name="caseSensitive" value="false" />
+</bean>
+<bean class="com.java.controller.HelloController"/>
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="suffix"><value>.jsp</value></property>
+<property name="prefix"><value>/WEB-INF/</value></property>
+</bean>
+
+</beans>

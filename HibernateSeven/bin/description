@@ -1,0 +1,1 @@
+create-drop: will drop on call to sf.close();

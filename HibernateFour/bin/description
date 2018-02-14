@@ -1,0 +1,2 @@
+Program to update table student in db using hibernate.
+ Adding new not-null column when data exist in db.

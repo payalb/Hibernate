@@ -1,0 +1,17 @@
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.java.model.Student" table="student" schema="hibernatedb">
+    <id name="sid" />
+    <property name="name" column="sname"/>
+    <property name="location" column="slocation"/>    
+	<set name="teachers" table="Temp" cascade="all" schema="hibernatedb">
+	<key column="sid"  ></key>
+    <many-to-many  column="tid"  class="com.java.model.Teacher"/>    
+	</set>
+   
+    </class>  
+    
+    </hibernate-mapping>

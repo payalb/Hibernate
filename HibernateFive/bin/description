@@ -1,0 +1,2 @@
+Program to validate table student in db using hibernate.
+ If new column in mapping, error

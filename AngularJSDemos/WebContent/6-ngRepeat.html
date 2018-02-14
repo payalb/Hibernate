@@ -1,0 +1,19 @@
+<!-- Can use it for initializing values to variables. Not used much as we do it in controllers. -->
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="ISO-8859-1">
+<title>ng-repeat</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+
+</head>
+<body >
+<div ng:init="employees=['Payal', 'shreya']" >
+<div data-ng-repeat="employee in employees">
+{{employee}}
+</div>
+<br>
+</div>
+</body>
+</html>

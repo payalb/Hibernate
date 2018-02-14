@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function my_test() {
+	
+var request = new XMLHttpRequest();
+request.open("GET", "One.json", true);//asynchronous
+request.setRequestHeader("Content-type", "application/json", true);
+request.onreadystatechange = function() {
+	//information back from server
+	if(request.status == 200 && request.readyState == 4) {
+		var data = JSON.parse(request.responseText) ;
+	
+		var result = document.getElementById("test");
+
+		for(var obj in data) {
+			alert(data[obj].name + "," + data[obj].password);
+		
+			result.innerHTML += data[obj].name+ " <br/>";
+		}
+	}
+}
+request.send(null);
+document.getElementById("test").innerHTML="Wait....";
+}
+
+function my_test1() {
+	
+	var request = new XMLHttpRequest();
+	request.open("GET", "Two.json", true);//asynchronous
+	request.setRequestHeader("Content-type", "application/json", true);
+	request.onreadystatechange = function() {
+		//information back from server
+		if(request.status == 200 && request.readyState == 4) {
+			var data = JSON.parse(request.responseText) ;
+	//	alert(data.u4.name);
+			var result = document.getElementById("test");
+				result.innerHTML="";
+			for(var obj in data) {
+				result.innerHTML += data[obj].name+ " <br/>";
+			} 
+		}
+	}
+	/* request.send(null); */
+	document.getElementById("test").innerHTML="Wait....";
+	}
+</script>
+</head>
+<body>
+<div id="test"></div>
+<!-- <script type="text/javascript"> my_test1(); </script> -->
+<input type="button" onclick="my_test1();"> 
+</body>
+</html>

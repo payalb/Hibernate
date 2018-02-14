@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h1>Change html elements</h1>
+<h2>Change html content:</h2>
+
+<p id="p1">Text1</p>
+<input type="text" id="username" disabled/>
+<script>
+document.getElementById("p1").innerHTML = "Hello";
+document.getElementById("username").value= "My Text";
+document.getElementById("username").removeAttribute("disabled");
+document.getElementById("username").setAttribute("style", "color: red");
+document.getElementById("p1").style.color = "blue";
+document.getElementsByTagName("body")[0].style.backgroundColor = "aqua";
+
+document.all().style.color = "Green";
+</script>
+</body>
+</html>

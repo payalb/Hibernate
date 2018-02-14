@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form validation</title>
+<script type="text/javascript">
+function validateForm(){
+
+
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validateForm();" action="./PayFees.html" method="post">
+<h2> Please fill in the below form :</h2>
+<label class="fieldName">Name:</label><input type="text" name="username" id="username" class="input"/><label class="warning" id="nameLabel"></label><br>
+<label class="fieldName">Password:</label><input type="password" name="password" id="password" class="input"/><label class="warning" id="passwordLabel"></label><br>
+<label class="fieldName">Renter Password:</label><input type="password" name="password1" id="password1" class="input"/><label class="warning" id="password1Label"></label><br>
+<label class="fieldName">Email Id:</label><input type="email" name="email" id="email" class="input"/><label  class="warning" id="emailLabel"></label><br>
+<label class="fieldName">Phone Number:</label><input type="tel" name="tel" id="tel" class="input"/><label class="warning" id="telLabel"></label><br><br>
+<input type="submit" value="Register Me!" >
+</form>
+</body>
+</html>

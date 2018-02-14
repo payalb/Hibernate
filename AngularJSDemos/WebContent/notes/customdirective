@@ -1,0 +1,41 @@
+//name of directive should be in camelCase to replace it with - in html code.
+
+module.directive("myFirstDirective", function(){
+return{
+template: 'hello world'
+}
+});
+
+can use it as a directive or <my-first-directive></my-first-directive>
+Can have templateUrl also instead of template.
+
+templateUrl: 'file1.html',
+restrict: 'E'
+
+restrict: E for element, A for attribute, EA for both
+
+link: linkfunction,
+template: {{name}}
+
+elem: refers to element where we are using this as an attribute, attrs refers to other attributes being used along with this attribute
+linkfunction($scope, elem, attrs){
+$scope.name="Payal"
+elem.bind("click", function(){
+alert(elem[0].innerHTML);
+});
+}
+
+If we have 3 such elements, we click one, all three changes . So we have shared scope
+
+scope has 3 values, true, false, {}, false is default i.e shared scope, true: separate scope for html element but will inherit properties from controller but if the scope is {}, it will not inherit controller properties. It has individual isolated scope..
+@ for text getter
+= for two way bind: don't use {{}} for elements binded 2 way in html page. : refernce to variable
+& for one way binding: reference to var.
+
+
+
+& used on function: returns the value of string
+& used on variable: change name to a function.
+
+js has chain inheritance concept.
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Service creation</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/sixteen.js"></script>
+<script type="text/javascript" src="scripts/sixteen_service.js"></script>
+</head>
+<body ng-controller="myController">
+<input type="text" placeholder="Enter Text.." ng-model="inputText" /><br>
+<input type="text" disabled="disabled" value={{outputText}} />
+<input type="button" ng-click="processString()" value="Process String"/>
+</body>
+</html>

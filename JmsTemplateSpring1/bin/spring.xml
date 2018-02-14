@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/jms
+	http://www.springframework.org/schema/spring-jms.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="template" class="org.springframework.jms.core.JmsTemplate">
+<property name="connectionFactory" ref="conFactory"></property>
+<property name="pubSubDomain" value="true"/>
+</bean>
+
+
+<bean id="conFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+<constructor-arg value="failover:(tcp://Dell-PC:61616)"/>
+</bean>
+
+<bean id="topic1" class="org.apache.activemq.command.ActiveMQTopic">
+<constructor-arg value="myTopic"/>
+</bean>
+<bean id="HelloControllerOne" class="com.java.hellocontroller.HelloControllerOne">
+<property name="template" ref="template"></property>
+<property name="topic" ref="topic1"></property>
+</bean>
+<bean id="HelloControllerTwo" class="com.java.hellocontroller.HelloControllerTwo">
+</bean>
+
+<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+<property name="connectionFactory" ref="conFactory"></property>
+<property name="destination" ref="topic1"></property>
+<property name="messageListener" ref="HelloControllerOne"></property>
+<property name="pubSubDomain" value="true"></property>
+</bean>
+
+<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+<property name="connectionFactory" ref="conFactory"></property>
+<property name="destination" ref="topic1"></property>
+<property name="messageListener" ref="HelloControllerTwo"></property>
+<property name="pubSubDomain" value="true"></property>
+</bean>
+</beans>

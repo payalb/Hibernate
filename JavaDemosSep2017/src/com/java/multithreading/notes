@@ -1,0 +1,17 @@
+Multithreading:
+2 or more parts executing concurrently.Each program is called a thread.
+Single program executing more than 1 task at a time.
+eg: Text editor can also format the text while we are writing.
+
+Create thread by: 
+1) Extend the thread class:Override the run method
+Thread class has the start and the run method. 
+Create the thread object. It just creates the java object
+Call the start method.
+Start thread creates the new thread and executes the run method.
+If you call the run method directly, new thread won't get created.
+
+2) Implement the Runnable interface:
+Runnable interface has only run method.
+To create a new thread, has to wrap it inside the thread class and 
+call the start method

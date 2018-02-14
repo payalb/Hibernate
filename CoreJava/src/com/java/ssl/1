@@ -1,0 +1,10 @@
+SSL: encryption (encoding the info), identification( sending to right pc)
+Using ssl: noone can see the data passed on to other pc.
+https: handshake:
+1) computers agree on how to encrypt
+2) Server sends the certificate
+3) Your computer says : Begin encrypting"
+4) Server says: "Begin encrypting"
+5) All messages are now encrypted.
+Version of ssl, random number: to compute master secret/ encryption keys, key, cipher, hash
+Server sends certificate with public key.

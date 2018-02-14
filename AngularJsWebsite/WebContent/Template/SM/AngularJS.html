@@ -1,0 +1,24 @@
+HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications.
+
+Data-binding is an automatic way of updating the view whenever the model changes, as well as updating the model whenever the view changes. This is awesome because it eliminates DOM manipulation from the list of things you have to worry abou
+
+ng-app: Tells angular to be active in that portion.
+
+ng-model: link view and model.
+<input type="text" ng-model="myText"/>
+
+$scope.myText would be set in controller. Can print the value in view : {{myText}}
+
+angular.js script tag:
+
+
+This code downloads the angular.js script which registers a callback that will be executed by the browser when the containing HTML page is fully downloaded. When the callback is executed, AngularJS looks for the ngApp directive
+Double-curly binding with an expression:
+
+Nothing here {{'yet' + '!'}}
+
+This line demonstrates two core features of AngularJS's templating capabilities:
+
+    A binding, denoted by double-curlies: {{ }}
+    A simple expression used in this binding: 'yet' + '!'
+AngularJS expressions are JavaScript-like code snippets that are evaluated by AngularJS in the context of the current model scope, rather than within the scope of the global context (window).

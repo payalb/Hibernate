@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Providers</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script>
+	angular.module("myApp", []).provider("date", function() {
+	
+	var myDate={};
+	
+		return {
+		
+			setDate: function(){
+			 myDate= new Date();
+			},
+		
+			$get : function() {
+				return {
+					showDate : function() {
+						return myDate;
+					}
+				}
+			}
+		}
+	}).config(function(dateProvider) {
+		
+		dateProvider.setDate();
+		
+		
+	}).controller("myController1", function($scope, date) {
+		$scope.date = date.showDate();
+	})
+</script>
+</head>
+<body ng-controller="myController1">{{date}}
+</body>
+</html>

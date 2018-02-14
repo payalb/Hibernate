@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MyTesterForEJB">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="EJBProjectOne.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/EJBProjectOne/EJBProjectOne">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="MyTesterForEJB"/>
+        <property name="java-output-path" value="/MyTesterForEJB/build/classes"/>
+    </wb-module>
+</project-modules>

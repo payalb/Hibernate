@@ -1,0 +1,2 @@
+1) download dependency ui-bootstrap https://angular-ui.github.io/bootstrap/
+2) Add it as a dependency in module.angular.module('myModule', ['ui.bootstrap']);

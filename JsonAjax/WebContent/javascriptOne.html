@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* var comboArr = ["One",2,"Three"];
+	var poisson ="fish";
+	var comboArr1 = ["Red", poisson, "Blue", comboArr]
+	alert(comboArr1);
+	alert(comboArr1[3][2]);
+ */
+ 
+ /* var x= 6;
+ function sum(a,b){
+ var x= a+b;
+ return x;
+ }
+ sum(3,4);
+ document.write(x); */
+ 
+/*   var comboArr = ["One",2,"Three"];
+	var poisson ="fish";
+	var comboArr1 = ["Red", poisson, "Blue", comboArr];
+	comboArr[1]= undefined;
+	alert(comboArr);
+	alert(comboArr.length); */
+	
+	function changeImage(){
+		document.getElementById("myImage").style.height="35%";
+		document.getElementById("myImage").style.width="35%";
+		return true;
+	}
+	
+	function changeFont(){
+		document.getElementById("h3style").style.color="Red";
+		return true;
+	}
+	
+	function changeFont1(){
+		document.getElementById("h3style").style.color="gray";
+		document.getElementById("h3style").style.visibility="visible";
+		return true;
+	}
+</script>
+
+<style>
+#h3style{
+color: grey;
+}
+</style>
+</head>
+<body onresize="changeImage();" onload="alert('Loaded sucessfully!');">
+<img src="Picture1.png" id="myImage"/>
+<h3 id="h3style" onMouseover="changeFont();" onMouseout="changeFont1();">Hi, Am from h3</h3>
+</body>
+</html>

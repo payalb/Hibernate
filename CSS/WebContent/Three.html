@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CSS</title>
+<!-- <link href="css/style3.css" rel="stylesheet"> -->
+<style type="text/css">
+@IMPORT url("css/style3.css");
+</style>
+</head>
+<body>
+<div>
+<h2>background-repeat</h2>
+
+<p>
+    The <code>background-repeat</code> CSS property controls how the background image is repeated inside
+    the HTML element it is applied to. The <code>background-repeat</code> CSS property can accept the
+    following values:
+</p>
+
+<ul>
+    <li>no-repeat</li>
+    <li>repeat</li>
+    <li>repeat-x</li>
+    <li>repeat-y</li>
+</ul>
+
+<p>
+    The <code>no-repeat</code> value makes the background image only be displayed one time inside the
+    HTML element. It is not repeated neither vertically, nor horizontally.
+</p>
+
+<p>
+    The <code>repeat</code> value makes the background image repeat both vertically and horizontally.
+    Thus, if the HTML element is 300 pixels high and 200 pixels wide, and the background image is
+    150 pixels high and 100 pixels wide, then the background image will be repeated 2 times horizontally
+    (300 / 150 = 2), and 2 times vertically (200 / 100 = 2).
+</p>
+
+<p>
+    The <code>repeat-x</code> value makes the background image repeat horizontally, but not vertically.
+</p>
+
+<p>
+    The <code>repeat-y</code> value makes the background image repeat vertically, but not horizontally.
+</p>
+
+</div>
+<div>
+<a name="background-position"></a>
+<h2>background-position</h2>
+
+<p>
+    The <code>background-position</code> CSS property is used to set the position of the background image.
+    The <code>background-position</code> CSS property can take either a set of predefined values, or
+    explicit numbers. I will show  you how both works.
+</p>
+
+
+</div>
+<div>
+<a name="predefined-background-position-values"></a>
+<h3>Predefined background-position Values</h3>
+
+<p>
+    The predefined values are split up into 2 sets. The first set specifies the horizontal position and the
+    second set specifies the vertical position.
+</p>
+
+<p>
+    The horizontal position values are:
+</p>
+
+<ul>
+    <li><code>left</code></li>
+    <li><code>center</code></li>
+    <li><code>right</code></li>
+</ul>
+
+<p>
+    The vertical position values are:
+</p>
+
+<ul>
+    <li><code>top</code></li>
+    <li><code>center</code></li>
+    <li><code>bottom</code></li>
+</ul>
+
+</div>
+<div>
+<h3>Numerical background-position Values</h3>
+
+<p>
+    Instead of the predefined values you can also use numeric values for the <code>background-position</code>
+    CSS property. Like with the predefined values, you set one value for the horizontal position and one value
+    for the vertical position. Here is an example that sets the horizontal position to 100 pixels and the vertical
+    position to 50 pixels:
+</p>
+  background-position : 100px 50px;
+  <p>
+    You can also use percentages for the horizontal and vertical positioning. When you do, the browser will align the
+    point that is X%, y% into the background image with the point that is X%,Y% into the HTML element. Here is an example:
+</p>
+  background-position : 50% 50%;
+  <p>
+    You can also use negative values in case you want to move the background image off to the left or top of the
+    HTML element. Here is an example:
+</p>
+
+   background-position : -20px -20px;
+   <h2>background-attachment</h2>
+
+<p>
+    Normally the background image of an HTML element scrolls along with the rest of the content when you scroll
+    up and down in the browser. For instance, if you have a background image set on the <code>body</code> element,
+    then the background image will be visible at the top of the page (or where you positioned it). When the user
+    scrolls down the page, the background image will scroll up and out of the browser window, just like the rest
+    of the content in the page.
+</p>
+
+<p>
+    If you want to keep the background image of an HTML element fixed so that it does not scroll along with
+    the content in the HTML element, then you can use the <code>background-attachment</code> CSS property.
+    The <code>background-attachment</code> CSS property can take this value:
+</p>
+
+<ul>
+    <li><code>fixed</code></li>
+    <li><code>scroll</code></li>
+    <li><code>local</code></li>
+</ul>
+
+<p>
+    <code>fixed</code> means that the background image is fixed inside the viewport of the browser.
+    If the content scrolls, the background image does not scroll along with the content.
+</p>
+
+<p>
+    <code>scroll</code> means that the background image is fixed inside the HTML element's borders.
+    In case the content inside the HTML element can scroll, the background image of the HTML element
+    will not scroll with it. If, however, the whole browser content (viewport) is scrolled, the background
+    image will follow the borders of the HTML element.
+</p>
+
+<p>
+    <code>local</code> means that the background image scrolls along with any content inside the viewport
+    or inside the HTML element if the element can scroll its content.
+</p>
+
+</div>
+<div>
+   <h2>background-size</h2>
+<p>
+    The <code>background-size</code> CSS property is used to size the background image set on an HTML element.
+    Here is a <code>background-size</code> example:
+</p>
+
+   <b>background-size       : 200px 100px;</b>
+   <p>
+    This example sets the <code>backround-size</code> CSS property to <code>200px 100px</code>, which means
+    a 200 pixel width (first number) and a 100 pixel height (second number).
+</p>
+
+<p>
+    You can also use percentages as width and height of the background image. Here is an example:
+</p>
+    <b>background-size       : 50% 50%;</b>
+   <p>
+    This example sets both width and height to 50% of the background positioning area (see <code>background-origin</code>
+    further down this page).
+</p>
+
+ 
+</div>
+<div>  
+<a name="background-origin"></a>
+<h2>background-origin</h2>
+
+<p>
+    The <code>background-origin</code> CSS property is used to specify what part of the HTML element to align the 
+    background image with. The <code>background-origin</code> CSS property can take one of these values:
+</p>
+
+<ul>
+    <li><code>border-box</code></li>
+    <li><code>padding-box</code></li>
+    <li><code>content-box</code></li>
+</ul>
+
+<p>
+    The value <code>border-box</code> means that the background image is drawn already under the border of the
+    HTML element.
+</p>
+
+<p>
+    The value <code>padding-box</code> means that the background image is drawn from the padding box and in.
+    The padding box starts just inside the border of the HTML element. Thus, the upper left corner of the
+    background image is aligned with the upper left corner of the padding box.
+</p>
+
+<p>
+    The value <code>content-box</code> means that the background image is drawn from the content box and in.
+    The content box starts inside the padding box - with the padding area of the HTML element excluded. 
+</p>
+
+<p>
+    Here are three <code>div</code> element with the same background image, using a different value for
+    the <code>background-origin</code> CSS property. The left uses <code>border-box</code>, the middle
+    uses <code>padding-box</code> and the right uses <code>content-box</code>.
+</p>
+  
+</div>
+<div> 
+<a name="background-clip"></a>
+<h2>background-clip</h2>
+
+<p>
+    The <code>background-clip</code> CSS property specifies where to clip the background image. In other words,
+    how much of the area of an HTML element to fill out with the background image. The <code>background-clip</code>
+    CSS property takes one of these values:
+</p>
+
+<ul>
+    <li><code>border-box</code></li>
+    <li><code>padding-box</code></li>
+    <li><code>content-box</code></li>
+</ul>
+
+<p>
+    The <code>border-box</code> value means that the background image is rendered from under the border of the HTML element
+    and in.
+</p>
+
+<p>
+    The <code>padding-box</code> value means that the only the padding box part of the HTML element has the background image
+    rendered.
+</p>
+
+<p>
+    The <code>content-box</code> value means that the only the content box part of the HTML element has the background image
+    rendered.
+</p>
+
+<p>
+    You can combine the <code>background-clip</code> property with the <code>background-origin</code> property to
+    get the clip and alignment of the background image you need.
+</p>
+
+   <p>
+   
+</div>
+<div>
+ <h3>  text-shadow</h3><br>
+
+The text-shadow CSS property enables you to add shadow to text. The text-shadow property takes four parameters: The x and y displacement of the shadow from the text, a blur radius telling how sharp or soft the shadow is to be, and the text shadow color. Here is an example: 
+p.withShadow {
+    text-shadow : 5px 10px 0px #999999;
+}
+
+
+This example sets a text shadow on all p elements which have the CSS class withShadow. The shadow is located 5 pixels to the right and 10 pixels below the text. The blur radius is 0 pixels which means the shadow is as sharp as possible. The shadow color is #999999 which is a gray color. Here is how that text shadow looks when applied to a text: 
+
+This text has text shadow. 
+
+Here is how the same text looks with a shadow with a blur radius of 5 pixels: 
+
+This text has text shadow. <br>
+ 
+<h4>Multiple Text Shadows</h4><br>
+
+You can have multiple text shadows. Just separate the parameter sets with a comma. Here is an example: <br>
+<span class="highlight">
+p.withShadows {<br>
+    &nbsp;&nbsp;text-shadow : 5px 10px 2px #ff0000, -3px 6px 5px #0000ff;<br>
+}
+
+</span><br>
+This example defines two text shadows at different locations, blur radius and colors. This makes it look like there are two different light sources on the text. Here is how a text looks with these text shadows applied: 
+
+This text has two shadows. 
+   
+   </p>
+</div>
+<a href="Two.html">Click here..</a>
+</body>
+</html>

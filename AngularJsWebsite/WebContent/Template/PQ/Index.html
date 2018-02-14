@@ -1,0 +1,9 @@
+<br><br>
+ Please select the technology: <select ng-model="course" ng-options="course.name for course in courses" ng-select="showCourse()"></select> 
+<br><br>
+
+
+<div ng-show={{isShowCourse}}>
+<a href={{course.url}}><strong>Start Practice for this course: {{course.name}}</strong></a>
+</div>
+ <br>

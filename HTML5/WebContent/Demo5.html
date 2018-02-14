@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+<script type="text/javascript">
+document.write("Hello1");
+alert("1");
+</script>
+</head>
+<body bgcolor="rgb(128,255,255)"  
+style="color:Black; ">
+<form method="post" style="border: 2px solid blue; width:500px;
+ margin:auto;">
+<h1 style="color: red; font-family: cursive;">Registration Form:</h1>
+<fieldset>
+<legend>Your Details</legend>
+<ol>
+<li><label>Name</label>
+<input type="text" name="username" placeholder="First and last name" maxlength="30" required/>
+</li>
+<li><label>Email</label>
+<input type="email" name="email" placeholder="example@domain.com" required>
+</li>
+<li><label>Phone</label>
+<input type="tel" name="phone" placeholder="Eg. +4475000000" required pattern="[+]{1}[0-9]{9,11}">
+</li>
+</ol>
+</fieldset>
+
+<fieldset>
+<legend>Delivery address</legend>
+<ol>
+<li><label>Address</label>
+<textarea name="address" rows="5" cols="20" ></textarea>
+</li>
+<li><label>Post Code</label>
+<input type="number" name="postalCode" min="100000" required>
+</li>
+<li><label>Country</label>
+<select name="country" required >
+<option value="">     </option>
+<option value="India">India</option>
+<option value="Usa">USA</option>
+<option value="Canada">Canada</option>
+</select>
+</li>
+</ol>
+</fieldset>
+
+<fieldset>
+<legend>Card details</legend>
+<ol>
+<li>
+<fieldset>
+<legend>Card Type</legend>
+<ol>
+<li><input type="radio" name="cardType" value="visa" required>VISA</li>
+<li><input type="radio" name="cardType" value="amex">AmEx</li>
+<li><input type="radio" name="cardType" value="mastercard">Mastercard</li>
+</ol>
+</fieldset>
+</li>
+<li>
+<label>Card Number</label>
+<input type="text" name="cardNumber" required pattern="[0-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}[-]{1}[0-9]{4}" />
+</li>
+<li><label>Security Code</label>
+<input type="number" name="securityCode" min="10000" maxlength="5" required>
+</li>
+<li><label>Name on the card</label>
+<input type="text" name="nameOnCard"  maxlength="40" required placeholder="Exact name as on the card">
+</li>
+</ol>
+</fieldset>
+<hr>
+<input type="submit" value="Buy it!"/>
+</form>
+<script type="text/javascript">
+document.write("Hello1");
+</script>
+</body>
+</html>

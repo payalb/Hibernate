@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="scripts/jquery-3.2.1.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+<h1>Random stuff</h1>
+<a href="#">Click</a> 
+</div>
+
+<table id="t1">
+<tr><td>Col1</td><td>Col2</td></tr>
+<tr><td><a href="#">Click</a></td><td>Col4</td></tr>
+</table>
+
+<table id="t2">
+<tr><td>Col1</td><td>Col2</td></tr>
+<tr><td>Col3</td><td>Col4</td></tr>
+</table>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+$("#wrapper").css("width", 500);
+$("#wrapper").css("margin", "auto");
+$("#wrapper").css("color", "red");
+$("a").css("color","purple");
+$("#wrapper").css({"background":"url('img1.jpg') repeat-y"});
+$("#t1 a").css("color", "red");
+//alert("Hi");
+});
+</script>
+</body>
+</html>

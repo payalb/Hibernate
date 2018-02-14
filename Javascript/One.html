@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Javascript One</title>
+
+</head>
+<body>
+<h1>Loading...</h1>
+The reason we've put the script element near the bottom of the HTML file is that HTML is loaded by the browser in the order it appears in the file. If the JavaScript is loaded first and it is supposed to affect the HTML below it, it might not work, as the JavaScript would be loaded before the HTML it is supposed to work on. Therefore, putting JavaScript near the bottom of the HTML page is often the best strategy.
+<ul>
+<li>Case sensitive</li>
+<li>Declaring a variable with the var keyword</li>
+<li>Array: var myVariable = [1,'Bob','Steve',10];</li>
+<li>Identity operator
+Does a test to see if two values are equal to one another, and returns a true/false (Boolean) result. myVariable = = = 4;</li>
+<li>Negation Operator: !(myVariable = = = 4); or  (myVariable != = 4); Returns false if  4</li>
+<li><u>Conditional:</u> <br>
+var iceCream = 'chocolate';<br>
+if (iceCream === 'chocolate') {<br>
+  alert('Yay, I love chocolate ice cream!');    <br>
+} else {<br>
+  alert('Awwww, but chocolate is my favorite...');    <br>
+}</li>
+
+</ul>
+<script>
+var myHeading= document.querySelector("h1");
+myHeading.textContent="Hello!";
+
+function add(){
+ var number1 = prompt('Please enter a number.');
+// localStorage.setItem("number1", number1);
+  var number2 = prompt('Please enter another number.');
+  // localStorage.setItem("number2", number2);
+return parseInt(number1)+parseInt(number2);
+}
+
+document.querySelector("html").onclick= function(){
+alert(add());}
+</script>
+<li><u>Function:<script>document.write(add());</script> </u>
+</li>
+</body>
+</html>

@@ -1,0 +1,24 @@
+Quantifiers:
+*: 0 or more  //[a-z]*
++: 1 or more
+? : 0 or 1
+a{5}: exactly 5  // [a-z]{5}
+a{2,}: 2 or more
+a{1,3}: between 1 and 3
+ab|cd: either ab or cd
+
+^abc$ : start, end of string
+[abc]:any of a or b or c
+[^abc]: not a or b or c
+[a-g] : between a and g
+.: any character except newline
+[^a-zA-Z0-9]: except alpha numeric character
+
+Pre-defined character classes:
+\w: word character (alphnumeric)
+\d: digit
+\s : whitespace
+\S: any character except whitespace
+\D: except digit any character
+\W: except word character
+

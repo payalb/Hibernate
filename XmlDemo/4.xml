@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="4.css"?>
+<BusinessCards>
+
+<BusinessCard>
+<Name>Shreya Malik</Name>
+<phone type="work" primary="primary">+91-7326723632</phone>
+<phone type="home">+91-32463743</phone>
+<phone type="fax">+91-34746364</phone>
+<email>shreya.malik@gmail.com</email>
+</BusinessCard>
+
+<BusinessCard>
+<Name>Rohit Sharma</Name>
+<phone type="work" primary="primary">+91-76584754</phone>
+<phone type="home">+91-43657463</phone>
+<phone type="fax">+91-37645647</phone>
+<email>rohit.sharma@yahoo.com</email>
+</BusinessCard>
+</BusinessCards>

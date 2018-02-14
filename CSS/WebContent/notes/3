@@ -1,0 +1,93 @@
+	background-image: url(C:\\Users\\Dell\\workspace\\CSS\\WebContent\\q2.png);
+	
+	id: # in css
+	
+	border-color: 
+	border-width
+	border-style
+	
+	div: to divide webpage into group of logical sections
+	span: like div, but span is inside an html element like in a paragraph, whereas div can have various elements inside it.
+	
+	a:hover: pseudo-class: operates like a class. state of a link. Reach one state at a time.
+	
+	positioning elements: block, inline.
+	h1, h2, para, div are block elements. Applies line break too. Takes all the space from left to right. Can apply width to shrink it's width.
+Can place block element inside other block element.
+
+img, span are inline. Will lie side-by-side. inline elements don't hv margin . img acts as a block that has margin all around. but span don't have margins on bottom, top. has only on sides.	
+
+by applying display:block to inline element, it will behave as a block.browser automatically places a margin b/w inline elements. To center the images, use:
+margin-left:auto;
+margin-right: auto;
+for block elements only.
+
+we can use float to make block element behave as inline. div{
+float:left;
+width:50%;}
+
+
+absolute positioning: 
+
+position: absolute
+top: 70px;
+left: 40px;
+
+Does not respect border/ boundaries of other elements if absolute positioning.
+
+to make position fixed: use position: fixed. the element will not move even if browser resized.
+
+position: relative... 
+
+
+overflow: scroll/ hidden/ inherit;
+width: 80px;
+
+
+cursor: default/ inherit/ auto/ url/ crosshair/ pointer/ move, text, help, hand, no-drop, alias, progress, wait, grab, grabbing, copy, cell, spinning, none.
+
+
+custom cursor: *.ico
+custom:url("mail.ico"), default
+
+
+wrap text around images:
+img class="image"
+
+img{
+float: left;
+margin-right: 10px;
+
+}
+
+
+static positioning: default, in flow
+relative positioning: position determined by first static element. relative to static elements around it. top, bottom, left, right. All elements are static: body, p. So if we mention absolute positioning only, it is wrt. the browser. 
+absolute positioning: position determined by first non-static element. If we give relative positioning to an element, it is no longer static. 
+
+
+Navigation bar:
+To get rid of dots present in the list format: ul{ list-style-type: none; padding:0; margin:0}
+To remove underline for anchor tags: ul li a {text-decoration: none; font-family: georgia, "times new roman", times, serif; background-color: gray; color:white}
+anchor tag is inline element. so to stretch background color: display: block; width: 80px; margin: 5px to have space b/w list elements.
+
+height should be equal to line-height to center the text vertically. vertical-align:middle
+
+ul li a:hover{
+
+}
+
+horizontal menus:
+div id="nav"
+
+
+li{
+display:inline}
+
+
+buttons:
+<li><a class=button href="">Home</a></li>
+.button{
+box-sizing: border-box;}
+
+

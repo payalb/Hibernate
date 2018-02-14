@@ -1,0 +1,37 @@
+<h1>{{homeMessage}}</h1><br>
+<h1>{{error}}</h1><br>
+
+
+<input type="button" ng-click="reloadData()" value="Reload Data"/>
+<p>
+	AngularJS routes enable you to create different URLs for different
+	content in your application. Having different URLs for different
+	content enables the user to bookmark URLs to specific content, and send
+	those URLs to friends etc. In AngularJS each such bookmarkable URL is
+	called a <i>route</i>.
+</p>
+
+<p>
+	AngularJS routes enables you to show different content depending on
+	what route is chosen. A route is specified in the URL after the
+	<code>#</code>
+	sign. Thus, the following URL's all point to the same AngularJS
+	application, but each point to different routes:
+</p>
+
+<pre>
+    http://myangularjsapp.com/index.html#books
+    http://myangularjsapp.com/index.html#albums
+    http://myangularjsapp.com/index.html#games
+    http://myangularjsapp.com/index.html#apps
+</pre>
+
+<p>
+	When the browser loads these links, the same AngularJS application will
+	be loaded (located at
+	<code>http://myangularjsapp.com/index.html</code>
+	), but AngularJS will look at the route (the part of the URL after the
+	<code>#</code>
+	) and decide what HTML template to show.
+</p>
+

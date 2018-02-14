@@ -1,0 +1,36 @@
+Filters can format, sort and filter the data. They can be used with the binding expression or a directive. To apply the filter use a pipe character (|).
+{{expression | filterName : parameter}}
+
+Filter to format data: lowercase, uppercase, number (includes comma as a thousand separator and number of decimal places can be specified),
+currency: formats number as currency. $ is default. Custom currency and decimal places can be specified.
+date: formats date to a string based on requested format.
+
+date:
+
+yyyy: 1998
+yy: 98
+MMMM: January-December
+MMM: Jan - Dec
+MM : 01-12
+M: 1-12 (no leading zero)
+dd: 01-31
+d : 1-31 (No leading zero)
+
+limitTofilter: To limit the number of rows or characters in a string
+{{expression | limitTo : limit : begin}} 
+
+{{salary | currency : "Rs. " :3}}
+{{salary | currency : $ :3}}
+
+
+module.filter("filtername", function(){
+var val= function(number, arg1){
+var value= number.toString(arg1);
+return value;
+}
+
+return val;
+});
+
+In html:
+{{number| filtername: arg1}}

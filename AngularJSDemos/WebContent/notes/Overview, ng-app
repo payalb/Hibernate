@@ -1,0 +1,13 @@
+javascript framework, build web application :spa - single page applications, compact compared to jquery, js
+open source
+madewithangular.com: shows sites built with angularjs
+1) dependency injection
+2) 2 way data binding: keeps model and view sync at all time
+3) easy to test: unit (jasmine framework)+ integration
+4) MVC apps, directives, filters, modules, routes..
+
+---------------------------
+Steps to build angularjs app:
+1) From angularjs.org download angular.js script file, add it to html page.
+ng-app is a directive , starting point for angular application, can be added to html, body , div tags
+ng-model: to set field in the model from view page.

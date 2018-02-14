@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Class selector</title>
+<script  src="http://ajax.aspnetcdn.com/ajax/jquery-2.1.3.js"></script>
+<script type="text/javascript">
+
+window.jQuery || document.write("<script type='text/javascript' src='scripts/jquery-3.2.1.js'><\/script>");
+
+
+</script>
+</head> 	
+
+<body>
+<h2>Select element by tag name</h2>
+<div class="div1"></div>
+<div class="div1"></div>
+
+<div class="div2">
+<a href="#">Click</a>
+
+<div class="div1">Div 1 in div 2</div>
+</div>
+
+	<input type="button"  class="div2" id="button1" value="Click">
+	<script>
+	$(document).ready(function () {
+		$("input").click(function () {
+			alert("Button clicked!");
+		});
+		
+	/* 	$("div").html("This is div element"); */
+		/* selects all div elements */
+		
+		$('.div1').css("color","pink");
+		/* selects anchor elements that are nested in div, no matter how deeply nested */
+		
+		$('.div1, .div2').css("background-color","yellow");
+		/* selects all div1 and div2 class elements */
+		
+		$('div.div2, .div1').html("Hello!");
+		/* selects div with class div2 and all elements with class div1 */
+		
+		$('.div2.div1').html("Hello there!");
+		/* element with both the classes */
+		
+		$('.div2 .div1').css("border","5px solid red");
+		/* elements with class div1 nested in class div2 */
+		
+		$('.div2').filter('.div1').css("border","5px solid green");
+		/* find elements with class div2 and then with class div1 i.e have
+		both div1 and div2*/
+		
+		
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="BusinessCard">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Name" type="xsd:string"></xsd:element>
+				<xsd:element name="phone" maxOccurs="unbounded">
+					<xsd:complexType mixed="true">
+						<xsd:attribute name="type" use="required">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="mobile" />
+									<xsd:enumeration value="fax" />
+									<xsd:enumeration value="work" />
+									<xsd:enumeration value="home" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:attribute>
+						<xsd:attribute name="primary" use="optional" fixed="primary">
+						</xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+				<!-- min = 1 by default -->
+				<xsd:element name="email" minOccurs="0" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE BusinessCard [ 
+<!ELEMENT BusinessCard (Name, phone+, email?)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST phone type (mobile| work | home | fax) #REQUIRED>
+<!ATTLIST phone primary (primary) #IMPLIED>
+<!ELEMENT email (#PCDATA) >
+]>
+
+<BusinessCard>
+<Name>Shreya Malik</Name>
+<phone type="work" primary="primary">+91-7326723632</phone>
+<phone type="home">+91-32463743</phone>
+<phone type="fax">+91-34746364</phone>
+<email>shreya.malik@gmail.com</email>
+</BusinessCard>

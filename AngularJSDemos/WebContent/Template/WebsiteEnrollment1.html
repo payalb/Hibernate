@@ -1,0 +1,102 @@
+
+	<form name="myForm" novalidate ng-submit="myForm.$valid&&submitForm()">
+		
+		<br>
+		<article>
+			<h2 class="TopHeading">
+				<u>Student Enrollment Form :</u>
+			</h2>
+			<br> Kindly fill in the below form to book a training with us.
+			Courses available are listed below. <br> <label
+				id="hiddenMessage" class="heading"></label><br>
+
+			<table>
+				<tbody>
+					<tr>
+						<td>Full Name:*</td>
+						<td class="inputText"><input type="text" name="name"
+							ng-model="user.name" ng-required="true" autofocus /></td>
+						<td><p ng-show="myForm.name.$touched&&myForm.name.$invalid">Required!!</p></td>
+					</tr>
+					
+					<tr>
+						<td>Phone Number:*</td>
+						<td class="inputText"><input type="text" name="phoneNumber"
+							ng-model="user.phoneNumber" ng-required="true" ng-minlength="9" /></td>
+						<td><p
+								ng-show="myForm.phoneNumber.$touched&&myForm.phoneNumber.$error.required">Required!!</p>
+							<p ng-show="myForm.phoneNumber.$error.minlength">Minimum
+								length is 9 digits!!</p></td>
+					</tr>
+					<tr>
+						<td>Password:*</td>
+						<td class="inputText"><input type="password" name="password"
+							ng-model="user.password" ng-required="true" ng-minlength="6" /></td>
+						<td><p
+								ng-show="myForm.password.$touched&&myForm.password.$error.required">Required!!</p>
+							<p ng-show="myForm.password.$error.minlength">Minimum length
+								is 6 digits!!</p></td>
+					</tr>
+					<tr>
+						<td>Email id:</td>
+						<td class="inputText"><input type="email" name="emailId"
+							ng-model="user.emailId" /></td>
+						<td><p
+								ng-show="myForm.emailId.$dirty&&myForm.emailId.$error.email">Invalid
+								email</p></td>
+					</tr>
+					<tr>
+						<td>Course:</td>
+						<td class="inputText"><select multiple="multiple"
+							ng-model="user.courses" ng-change="calculateFees()"
+							ng-options="course.name for course in courses">
+								
+						</select></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td>Course Fee:</td>
+						<td class="inputText"><label id="feeDetails"
+							ng-model="user.fees">{{user.fees}}</label></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Tentative Start Date:</td>
+						<td class="inputText"><input type="date"
+							placeholder="yyyy-MM-dd" ng-model="user.startDate" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>City:</td>
+						<td class="inputText"><input type="text" name="city"
+							ng-model="user.city"  /></td>
+						<td></td>
+					</tr>
+					
+					
+					<tr>
+						<td>Tell us your expectations:</td>
+						<td class="inputText"><textarea ng-model="user.note" rows="5"
+								cols="1" placeholder="Tell us any other training requirement.."></textarea></td>
+
+						<td></td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td></td>
+						<td class="inputText"><input type="submit"
+							value="Contact Me!" /></td>
+						<td></td>
+					</tr>
+				</tbody>
+
+			</table>
+
+			<h4 class="heading">Note:</h4>
+			All fields marked with asterik (*) are mandatory.<br> <br>
+		</article>
+	
+
+
+	</form>

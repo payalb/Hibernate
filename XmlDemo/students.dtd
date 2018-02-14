@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT students (student)* >
+<!ENTITY % pd "(#PCDATA)" >
+<!ELEMENT student ( name, age, course, stream, (location|city), photo?, marks, teachers?) >
+
+<!ELEMENT name %pd;>
+<!ATTLIST name id_code ID #REQUIRED>
+<!ELEMENT age %pd;>
+<!ELEMENT course ANY >
+<!ELEMENT stream %pd; >
+<!ELEMENT location ANY >
+<!ATTLIST location country CDATA "India">
+
+<!ENTITY % photo SYSTEM "students.ent" >
+%photo;
+<!ELEMENT marks %pd; >
+
+<!ELEMENT teachers (teacher)+ >
+
+<!ELEMENT teacher (tname , subject) >
+
+<!ELEMENT tname %pd; >
+<!ELEMENT  subject %pd; >
+
+
+<!ENTITY greet "Welcome abroad !" >
+
+
+<!ENTITY stud_disclaimer SYSTEM "disclaimer.ent">

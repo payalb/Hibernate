@@ -1,0 +1,16 @@
+better in performance than angular2. needs atleast v6.10
+npm: node package manager 
+node -v
+npm -v
+
+npm install -g @angular/cli: -g indicates angular-cli installed globally on the system and not to be installed in every project
+ng -v : if angular cli installed or not
+
+ng new project-name: to create new project, installs packages to run angular4 application
+cd project-name
+
+ng serve: to run the application
+
+http://localhost:4200/ to see my application
+
+

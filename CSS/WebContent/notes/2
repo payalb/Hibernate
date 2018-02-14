@@ -1,0 +1,20 @@
+every element has 4 box around them:
+margin: space between page and border. when left and right is auto=> space be equal: centralized content. Can be set to 0.
+border
+padding: space between border and content. 
+content:
+
+Background color property applies only to content and padding, not to margin or border.
+eg. of padding: padding: 2px 3px 5px 6px; similarly for border.
+border: black 2px solid;
+
+Here is a list of the commonly used values for the font-family CSS property. These are not the only possible fonts, but as mentioned, they are very commonly used. 
+
+
+Font Category
+
+<b><u>Font Name</u></b>
+
+Serif Serif, Times, "Times New Roman", Georgia, Palatino, "Palatino Linotype", "Book Antigua" <br> 
+Sans-Serif Sans-Serif, Arial, Helvetica, Verdana, Tahoma. <br>
+Monospace Monospace, Courier, "Courier New" <br>

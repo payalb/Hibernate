@@ -1,0 +1,127 @@
+The $http Service
+
+The $http service is the easiest way to send AJAX calls to your web server. Remember, that AJAX calls cannot be sent to a different domain than the domain from which the HTML page making the AJAX calls is loaded. For instance, if the HTML page was loaded from jenkov.com then that HTML page can only make AJAX calls back to URLs within the jenkov.com domain. 
+
+
+
+
+
+JSONP
+
+JSONP is an option that many popular APIs expose for Javascript clients. With JSONP, the server will respond with a Javascript body which includes a function callback as specified in the request. We should note that JSONP only supports GET requests and uses <script> tags to get around the Cross Site Scripting issue.
+
+This works pretty well with APIs that serve Javascript clients, but unfortunately it means you will have a different API format for mobile clients of the API.
+$http Functions
+
+The $http service has several functions you can use to send AJAX requests. These are: 
+•$http.get(url, config)
+•$http.post(url, data, config)
+•$http.put(url, data, config)
+•$http.delete(url, config)
+•$http.head(url, config)
+
+Notice that the $http.post() and $http.put() functions take a data parameter which contains data to be sent to the server. The rest of the $http functions cannot take a data parameter. 
+
+The data parameter will be converted to a JSON string. This string will be be included in the request body when the HTTP request is sent to the server. AngularJS will consider all properties starting with a $ as private, and thus exclude these from the string. If you need to include properties starting with a $ in the data string, convert the data object to a string yourself using JSON.stringify(data). 
+You can also use the $http service as a function directly, like this: 
+var promise = $http(config);
+
+
+In this case the URL and HTTP method are also set inside the config object. The config object is explained in the following section. 
+ 
+The config Parameter
+
+The config parameter passed to the different $http functions controls the HTTP request sent to the server. The config parameter is a JavaScript object which can contain the following properties: 
+•method
+•url
+•params
+•headers
+•timeout
+•cache
+•transformRequest
+•transformResponse
+The method property can be used to set the HTTP method for pthe request. The method is one of either GET, POST, PUT, DELETE or HEAD. This property is normally set implicitly via the function you choose to call on the $http service, so you will rarely need to set this property in practice. 
+
+The url property can be used to set the URL of the AJAX call. This is already provided to the various $http functions, so you will rarely need to set this again in the config object. 
+
+The params property is used to set any additional request parameters to be appended to the URL query string. The params property is a JavaScript object with one property per request parameter to add. 
+
+The headers property is used to set any additional HTTP headers you want sent to the server. The headers property is a JavaScript object with one property per header. 
+
+The timeout property is used to set the timeout for the AJAX call. When the timeout limit is reached, the AJAX call is aborted. The timeout is specified in milliseconds. 
+
+The cache property is used to enable XHR GET request caching. 
+
+The transformRequest property is used to set a function which can transform the request object before it is sent to the server. 
+
+The transformResponse property is used to set a function which can transform the response sent back from the server, before it is passed to your application. 
+AngularJS & JSONP
+
+AngularJS's $http service is also capable of sending JSONP requests. The normal AJAX calls can only send requests to URLs within the same domain as the HTML page sending the requests was loaded from. You can get around this with JSONP requests. 
+
+JSONP is short for "JSON with Padding" (I explain why, later). A JSONP request is not sent via the XHR object like AJAX calls normally are. Instead, a <script> element is created and inserted into the HTML page. Here is an example of how such a <script> element could look: 
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+
+AngularJs $http.get() Service Response Example
+
+</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript">
+
+var app = angular.module('serviceApp', []);
+
+app.controller('serviceCtrl', function ($scope, $http) {
+
+$http({
+
+method: 'GET',
+
+url: 'sample.html'
+
+}).then(function success(response) {
+
+$scope.myWelcome = response.data;
+
+$scope.statusval = response.status;
+
+$scope.statustext = response.statusText;
+
+$scope.headers = response.headers();
+
+}, function error(response) {
+
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div ng-app="serviceApp" ng-controller="serviceCtrl">
+
+<p>Hi, Guest</p>
+
+<h1>{{myWelcome}}</h1>
+
+<p>StatusCode: {{statusval}}</p>
+
+<p>Status: {{statustext}}</p>
+
+<p>Response Headers: {{headers}}</p>
+
+</div>
+
+</body>
+
+</html>

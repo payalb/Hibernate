@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="EJBProjectOne">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <dependent-module archiveName="ServletApp.war" deploy-path="/" handle="module:/resource/ServletApp/ServletApp">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/EJBProjectOne/build/classes"/>
+        <property name="ClientProject" value="EJBProjectOneClient"/>
+        <property name="ClientJARURI" value="EJBProjectOneClient.jar"/>
+    </wb-module>
+</project-modules>

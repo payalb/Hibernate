@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="scripts/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div id="d1">
+<p id="p1">hi</p>
+</div>
+<p id="p2">hi</p>
+<ol>
+<li><h2>Apple</h2></li>
+<li>Custard Apple</li>
+</ol>
+<script type="text/javascript">
+//$('#d1 #p1').css("color","blue");
+//$('*').css("color","red");
+/* $('ol li:contains("Apple")').css("color","red"); */
+ $('ol li:has(h2)').css("color","red");
+ $('ol li').prepend("Fruit: ");
+ var items= $('ol li');
+ alert(items[1].innerHTML);
+</script>
+</body>
+</html>

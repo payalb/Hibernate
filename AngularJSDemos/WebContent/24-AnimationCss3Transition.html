@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>CSS3 Transition</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-animate.min.js"></script>
+<script>
+angular.module("myModule", ['ngAnimate']).controller("myController", function($scope){
+
+});
+
+</script>
+<style >
+.container{
+
+}
+
+.rotate{
+transition: all 0.5s ease-in-out;
+}
+
+.rotate:hover{
+transition: all 1s ease-in-out;
+}
+
+.box{
+margin: 50px auto;
+background-color: fuchsia;
+height: 150px;
+width: 150px;
+}
+
+.box:hover{
+transform: rotate(360deg);
+background-color: green;
+border-radius: 50%;
+}
+
+
+</style>
+</head>
+<body ng-controller="myController"">
+<div class="container">
+<div class="rotate box">
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "students.dtd" >
+<?xml-stylesheet type="text/xsl" href="students1.xsl"?>
+<students>
+
+	<student>
+		<name id_code="1">Kanika Gupta</name>
+		<age>24</age>
+		<course>B.Tech</course>
+		<stream>ECE</stream>
+		<location country="India">Meerut</location>
+		<photo src="q2.png" width="200px" height="200px" />
+		<marks>45</marks>
+		<teachers>
+			<teacher>
+				<tname>Devraj</tname>
+				<subject>Digital Systems</subject>
+			</teacher>
+			<teacher>
+				<tname>Shreya</tname>
+				<subject>Embedded System</subject>
+			</teacher>
+		</teachers>
+	</student>
+
+	<student>
+		<name id_code="2">Reshu Malik</name>
+		<age>26</age>
+		<course>B.Tech</course>
+		<stream>CSE</stream>
+		<location country="India">Jaipur</location>
+		<photo src="q3.jpg" width="200px" height="200px" />
+		<marks>76</marks>
+		<teachers>
+			<teacher>
+				<tname>Kriti</tname>
+				<subject>Java</subject>
+			</teacher>
+			<teacher>
+				<tname>Ram</tname>
+				<subject>HTML</subject>
+			</teacher>
+		</teachers>
+	</student>
+
+
+	<student>
+		<name id_code="3">Kritika Sharma</name>
+		<age>23</age>
+		<course>B.Tech</course>
+		<stream>CSE</stream>
+		<location country="India">Rajgarh</location>
+		<photo src="q9.jpg" width="200px" height="200px" />
+		<marks>60</marks>
+		<teachers>
+			<teacher>
+				<tname>Kriti</tname>
+				<subject>Java</subject>
+			</teacher>
+			<teacher>
+				<tname>Rahul</tname>
+				<subject>HTML</subject>
+			</teacher>
+		</teachers>
+	</student>
+
+</students>

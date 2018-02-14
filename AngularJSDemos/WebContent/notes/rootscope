@@ -1,0 +1,4 @@
+$rootScope: available for all controllers: global variable, 
+whatever assigned available to all controllers, factory, directives.
+
+$scope: only for current controller.

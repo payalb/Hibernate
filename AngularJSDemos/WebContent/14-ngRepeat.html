@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>ng-repeat</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script>
+angular.module("myModule",[]).controller("myController", function($scope){
+$scope.arr= new Array(100);
+
+});
+</script>
+</head>
+<body ng-controller="myController">
+
+	<h2>Example1</h2>
+	<ul>
+		<li ng-repeat="i in [1,2,3,4]">{{i}}</li>
+	</ul>
+	
+	<h2>Example2</h2>
+	<input type="text" ng-model="message"> {{message}}
+	<br> The above message has a global scope.
+	<ul>
+		<li ng-repeat="i in [11]"><input type="text" ng-model="message">
+			{{message}}</li>
+		<br>
+	</ul>
+	The message written outside li won't get the value. {{message}}
+	
+	<h2>Example3</h2>
+	<input type="text" ng-model="msg.property"> {{msg.property}}
+	<br> The above message has a global scope.
+	<ul>
+		<li ng-repeat="i in [11]"><input type="text"
+			ng-model="msg.property"> {{msg.property}}</li>
+		<br> The message written outside li will get the value now.
+		{{msg.property}}
+	</ul>
+	
+	<h2>Example4</h2>
+	
+	<ul>
+		<li ng-repeat="i in arr track by $index"> {{$index+1}} </li>
+		
+	</ul>
+	<!-- <ul>
+		<li ng-repeat="i in arr"> {{$index+1}} </li>
+		
+	</ul> -->
+	<h2>Example5</h2>
+	<ul>
+		<li ng-repeat="i in arr track by $index">Hello  </li>
+		
+	</ul>
+</body>
+</html>

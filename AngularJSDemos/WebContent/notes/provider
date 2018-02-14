@@ -1,0 +1,63 @@
+angular.module("myApp",[]).provider("date", function(){
+	
+	 return{
+		$get: function(){
+		return {
+		
+		showDate: function(){
+		return new Date();
+		}
+		
+		}
+		}
+	
+	}
+
+}).controller("myController", function($scope, date) {
+	$scope.date= date.showDate();
+});
+---------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Providers</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script>
+	angular.module("myApp", []).provider("date", function() {
+	
+	var myDate={};
+	
+		return {
+		
+			setDate: function(){
+			 myDate= new Date();
+			},
+		
+			$get : function() {
+				return {
+					showDate : function() {
+						return myDate;
+					}
+				}
+			}
+		}
+	}).config(function(dateProvider) {
+		
+		dateProvider.setDate();
+		
+		
+	}).controller("myController1", function($scope, date) {
+		$scope.date = date.showDate();
+	})
+</script>
+</head>
+<body ng-controller="myController1">{{date}}
+</body>
+</html>
+
+
+1)	Provider: naming convention is name of the service it provides followed by the Provider.
+Eg: $log service has $logProvider. We can configure how service will act and what kind of service is created. Eg. $logProvider has a method debugEnabled which specifies whether $log service will debug messages to console or not. $get method invoked using $injector.invoke() methods when an instance needs to be created. New instance of provider is created using $injector.instantiate().

@@ -1,0 +1,48 @@
+p.para1{
+	background-color: lime;
+	
+	padding: 20px;
+	
+	border-color: black;
+	border-width: 3px;
+	border-style: dashed;
+	
+	margin:30px;
+	
+}
+.para2{
+	background-color: lime;
+	
+	padding: 20px;
+	padding-left:40px;
+	
+	border-color: black;
+	border-width: 3px;
+	border-style: dotted;
+	
+	margin:10%;
+	margin-left: 10px;
+	
+	box-shadow:  4px 4px 5px 4px  rgb(0,72,0);
+}
+
+.image1{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	
+	padding: 3px;
+	background-color: teal;
+}
+body{
+	
+	background-color: orange;
+	
+	padding: 1.5em;
+	
+	border-color: maroon;
+	border-width: 4px;
+	border-style: solid;
+	
+	margin:2em;
+}

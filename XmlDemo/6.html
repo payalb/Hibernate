@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DOM Example</title>
+<script type="text/javascript">
+
+window.addEventListener("load", function(){
+document.querySelector("#createBCard").addEventListener("click", createBusinessCard);
+
+});
+
+function createBusinessCard(){
+	var xmlData= document.getElementById("xmlData1");
+	var bzcards= xmlData.getElementsByTagName("BusinessCard");
+	for(var i=0; i< bzcards.length; i++){
+		var currentCard= bzcards[i];
+		var newCard= document.createElement("div");
+		newCard.setAttribute("class","BusinessCard");
+		
+		var name= document.createElement("div");
+		name.setAttribute("class", name);
+		var textNode= document.createTextNode(currentCard.getElementsByTagName("Name")[0].innerHTML);
+		name.appendChild(textNode);
+		newCard.appendChild(name);
+		
+		var phone1= document.createElement("div");
+		phone1.setAttribute("class", "phone");
+		phone1.setAttribute("type", "work");
+		var textNode1= document.createTextNode(currentCard.getElementsByTagName("phone")[0].innerHTML);
+		phone1.appendChild(textNode1);
+		newCard.appendChild(phone1);
+		
+		var phone2= document.createElement("div");
+		phone2.setAttribute("class", "phone");
+		phone2.setAttribute("type", "home");
+		var textNode2= document.createTextNode(currentCard.getElementsByTagName("phone")[1].innerHTML);
+		phone2.appendChild(textNode2);
+		newCard.appendChild(phone2);
+		
+		var phone3= document.createElement("div");
+		phone3.setAttribute("class", "phone");
+		phone3.setAttribute("type", "fax");
+		var textNode3= document.createTextNode(currentCard.getElementsByTagName("phone")[2].innerHTML);
+		phone3.appendChild(textNode3);
+		newCard.appendChild(phone3);
+		
+		document.getElementsByTagName("body")[0].appendChild(newCard);
+	}
+}
+
+
+
+</script>
+</head>
+<body>
+	<xml id="xmlData1" style="display: none"> 
+	<BusinessCards>
+	<BusinessCard> 
+	<Name>Shreya Malik</Name>
+	 <phone type="work">+91-7326723632</phone> 
+	 <phone type="home">+91-32463743</phone>
+	<phone type="fax">+91-34746364</phone> 
+	<email>shreya.malik@gmail.com</email>
+	</BusinessCard> 
+	</BusinessCards>
+	 </xml>
+
+
+	<button id="createBCard">Create Business Card</button>
+</body>
+</html>

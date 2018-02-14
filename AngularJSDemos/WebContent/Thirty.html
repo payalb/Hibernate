@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Custom data in state in UI Router</title>
+<script type="text/javascript" src="scripts/angular.js"></script>
+<script type="text/javascript" src="scripts/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="scripts/thirty.js"></script>
+<script type="text/javascript">
+	document.write('<base href="' + document.location + '" />');
+</script>
+</head>
+<body >
+
+	<a ui-sref="home">Home</a>
+	<br>
+	<a ui-sref="contactUs">Contact Us</a>
+	<br>
+	<br> 
+	<div ng-controller="employeeController as empCtrl">
+	<div ng-repeat="empl in empCtrl.emplData">
+	<a ui-sref="employee({id: empl.id})">{{empl.name}}</a>
+	</div></div>
+	<br>
+	<ui-view></ui-view>
+</body>
+</html>

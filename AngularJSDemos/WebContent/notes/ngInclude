@@ -1,0 +1,4 @@
+Since it is an ajax request to file:// .. using get method, would need server to execute.
+Remember the single quotes outside filename.
+
+	<div ng-include="'Template1/Hello.html'" ></div>

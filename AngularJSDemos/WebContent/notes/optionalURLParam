@@ -1,0 +1,3 @@
+$location.url("/xyz/"+param);
+if param is optional: controller("/xyz/:param?)
+? suggests it is optional

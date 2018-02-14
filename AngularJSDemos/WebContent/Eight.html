@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>8. Handling events in angular js</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/eight.js"></script>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body ng-controller="myController">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Likes</th>
+				<th>DisLikes</th>
+				<th>Like/DisLike</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in people">
+				<td>{{person.name}}</td>
+				<td>{{person.likes}}</td>
+				<td >{{person.dislikes}}</td>
+				<td><input type="button" value="like"
+					ng-click="incrementLikes(person)" /> <input type="button"
+					value="Dislike" ng-click="incrementDisLikes(person)" /></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

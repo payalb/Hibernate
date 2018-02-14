@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>7. Index attribute</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/seven.js"></script>
+</head>
+<body ng-controller="myController">
+
+	<table>
+		<thead>
+			<tr>
+				<th>Sr. No.</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Cities</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employees" ng-init="parentIndex=$index">
+				<td>{{$index+1}}</td>
+				<td>{{employee.name}}</td>
+				<td>{{employee.age}}</td>
+				<td ng-repeat="city in employee.cities" colspan="0.5">{{parentIndex}}
+					,{{$index+1}} {{city}}</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

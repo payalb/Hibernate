@@ -1,0 +1,18 @@
+<table border="1">
+<thead>
+<th>Name</th>
+<th>Date of Birth</th>
+<th>Gender</th>
+<th>Salary in Rs</th>
+<th>Salary in Dollar</th>
+</thead>
+<tbody>
+<tr ng-repeat="employee in employees " >
+<td>{{employee.name  }}</td>
+<td>{{employee.dob | date:"dd/MM/yyyy" }}</td>
+<td>{{employee.gender }}</td>
+<td>{{employee.salary | number : 2}}</td>
+<td>{{employee.salary | currency: "$": 1}}</td>
+</tr>
+</tbody>
+</table> 

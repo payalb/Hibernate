@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1" >
+<title>Angular JS Routing reload() method</title>
+<script type="text/javascript" src="scripts/angular.js"></script>
+<script type="text/javascript" src="scripts/angular-route.min.js"></script>
+<script type="text/javascript" src="scripts/twentysix.js"></script>
+<link rel="stylesheet" href="twentyNine.css">
+</head>
+<body>
+<h2>
+To reload only the route instead of reloading entire application.</h2>
+<br><br>
+	<table style="font-family: Arial Black">
+		<tr>
+			<td colspan="2" class="header">Website Header</td>
+		</tr>
+		<tr>
+			<td class="leftMenu">
+				<ul>
+					<li><a href="#/home">Home</a></li>
+					<li><a href="#/info">Info</a></li>
+					<li><a href="#/contactUs">Contact Us</a></li>
+					<li><a href="#/inlineTemplate">Inline Template</a></li>
+				</ul>
+			</td>
+			<td class="rightMenu"><ng-view></ng-view></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" class="footer">Website Footer</td>
+		</tr>
+	</table>
+</body>
+</html>

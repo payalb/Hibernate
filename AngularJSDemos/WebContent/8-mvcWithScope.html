@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>MVC</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript">
+	angular.module("myModule", []).controller("myController", function($scope) {
+		$scope.myLanguage = "None";
+
+		$scope.selectLanguage = function(language) {
+			$scope.myLanguage = language;
+		}
+	})
+</script>
+
+</head>
+<body>
+	<div ng-controller="myController">
+		Select your favourite language:
+		<button ng-click="selectLanguage('PHP')">PHP</button>
+		<button ng-click="selectLanguage('Java')">Java</button>
+		<button ng-click="selectLanguage('C')">C</button>
+		<button ng-click="selectLanguage('C++')">C++</button>
+		<button ng-click="selectLanguage('VB')">VB</button>
+
+		<br> You have selected {{myLanguage}}
+	</div>
+</body>
+</html>

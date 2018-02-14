@@ -1,0 +1,84 @@
+By Martin and promoted by typesafe company, scalable language: motto was to make it scalable.. more than java (structured language,  multithreading), python. So we use tools of typesafe.
+
+Important for big-data world: big amount of data: framework: Hadoop: java/scala, Spark: only scala
+
+scala: less voluminous/ boiler-plate code compared to java
+To print something: just 1 line.
+octa-core software=> concurrent support
+functional programming.
+faster than ruby, python, nodejs, java
+upgraded version of java, runs on JVM. Scala also runs on jvm. Can be used along with Java.
+
+
+http://www.scala-lang.org/download
+
+add to PATH: scala/bin
+
+cmd prompt: 10+3*2
+res0: Int= 16
+
+-> "Your answer is" + res0
+res1: String= Your answer is 16
+
+-> var myName= "Derek"
+myName: String =Derek
+
+
+Byte -126 to 127
+Boolean true false 
+Char unsigned max value 65535
+short: -32768 to 32767
+Int : -2147483648 to 2147483647
+Long: -
+Float
+Double: 
+
+var x= BigInt(656656757656756)
+
+x+1
+
+var y= BigDecimal("3.1465767878978988");
+
+
+var randInt= 100000
+
+randInt.
+
+"5+4="+(5+4)
+
+x+= 1
+
+x++ not allowed
+
+import scala.math._
+abs(-8)
+ceil(5.45) => 6.0
+round(5.45) => 5
+floor(5.45) => 5.0
+exp(1) =>
+pow(2,2)
+sqrt(pow(2,2)+pow(2,2))
+hypot(2,2)
+log10(10000)
+log(2.5654564)
+min(5, 10)
+max(1, 1000)
+(random* (11-1)+1).toInt
+toRadians(90)
+toDegrees(1.5707963267948966)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

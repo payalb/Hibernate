@@ -1,0 +1,8 @@
+orderBy filter: orderBy: expression: reverse 
+If reverse true => sort descending else ascending.
++ => sort ascending, - => sort descending.
+
+ng-repeat="employee in employees | orderBy: 'salary' : false"
+ng-repeat="employee in employees | orderBy: '+salary' 
+
+default: reverse is false

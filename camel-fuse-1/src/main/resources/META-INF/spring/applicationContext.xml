@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:camel="http://camel.apache.org/schema/spring" 
+	xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:osgi="http://www.springframework.org/schema/osgi" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+               http://camel.apache.org/schema/spring            
+                 http://camel.apache.org/schema/spring/camel-spring.xsd  
+                        http://www.springframework.org/schema/osgi     
+             http://www.springframework.org/schema/osgi/spring-osgi.xsd   
+                    http://camel.apache.org/schema/cxf        
+              http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd">
+	<camelContext id="camelContext-5bffb0fb-8de8-40ce-9b97-516ce49d2227"
+		trace="false" xmlns="http://camel.apache.org/schema/spring">
+		<camel:route id="_route1">
+			<camel:from id="_from1" uri="file:E:/inbox" />
+			<camel:to id="_to1" uri="file:E:/java" />
+		</camel:route>
+	</camelContext>
+</beans>

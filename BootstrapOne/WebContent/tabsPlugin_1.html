@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tabs Plugin Example</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#homeTab" data-toggle="tab">Home</a></li>
+					<li><a href="#ContactTab" data-toggle="tab">Contact</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"> Locations <b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu" id="menu">
+							<li><a href="#PuneTab" data-toggle="tab">Pune</a></li>
+							<li><a href="#DelhiTab" data-toggle="tab">Delhi</a></li>
+							<li><a href="#MumbaiTab" data-toggle="tab">Mumbai</a></li>
+						</ul></li>
+				</ul>
+				<div class="tab-content">
+					<div id="homeTab" class="tab-pane active fade in">
+						<h3>Home Page</h3>
+						<p>Home page content</p>
+					</div>
+					<div id="ContactTab" class="tab-pane fade">
+						<h3>Contact Page</h3>
+						<p>Contact page content</p>
+					</div>
+					<div id="PuneTab" class="tab-pane fade">
+						<h3>Pune Page</h3>
+						<p>Pune page content</p>
+					</div>
+					<div id="DelhiTab" class="tab-pane fade">
+						<h3>Delhi Page</h3>
+						<p>Delhi page content</p>
+					</div>
+					<div id="MumbaiTab" class="tab-pane fade">
+						<h3>Mumbai Page</h3>
+						<p>Mumbai page content</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

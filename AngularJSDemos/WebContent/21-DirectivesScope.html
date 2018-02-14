@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="newModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Scope in custom Directives</title>
+<script type="text/javascript" src="scripts/angular.js"></script>
+<script>
+angular.module("newModule",[]).controller("myController", function($scope){
+$scope.message="Hello!";
+$scope.age=30;
+$scope.calcMarks= function(){
+alert("Marks are "+ $scope.age*2);}
+}).directive("myDirective", function(){
+return{
+scope: {
+message: '@',
+age: '=',
+onclick: '&'
+},
+template: [ '{{message}}' ," <input type='text' ng-model='message' />", "Age is : {{age}} "," <input type='text' ng-model='age' />" ,
+"<input type='button' ng-click='onclick()' value='Click me'/>"]
+}
+})
+</script>
+</head>
+<body ng-controller="myController">
+
+From controller: {{message}}<br>
+From controller: {{age}}<br>
+From controller: {{marks}}<br>
+<input type="button" ng-click="calcMarks()" value="From controller"/><br>
+From directive : <my-directive message="message" age= "age" onclick="calcMarks()"></my-directive><br>
+This is from directive property instead of controller because of use of @ which does text binding.<br>
+Changes in textbox will only change scope property value not the controller property<br>
+
+</body>
+</html>

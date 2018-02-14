@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Box Model</title>
+<link href="css/style2.css" rel="stylesheet"/>
+</head>
+<body>
+<p class="para1">
+The syntax for the box-shadow CSS property is:
+box-shadow: none;
+<br>
+OR<br>
+<b>box-shadow: [inset] offset-x offset-y [blur-radius] [spread-radius] color;</b>
+
+<br>
+<u>inset</u>
+Optional keyword. It is the type of shadow to apply to the element. It can be one of the following:
+
+
+Value
+
+Description
+
+
+inset Shadow is displayed as an inset shadow
+
+ Example below shows inset, offset-x, offset-y and color
+ div { box-shadow: inset 2px 2px #CCCCCC; } 
+<u>omitted:</u>Shadow is displayed as a drop shadow 
+
+ Example below shows offset-x, offset-y and color
+ div { box-shadow: 2px 2px #CCCCCC; }  <br>
+<u>offset-x</u>
+Required. It is the horizontal distance that can be either a positive or negative value. If offset-x is a negative value, the shadow will be placed to the left of the element. It can be one of the following:
+
+
+Value
+
+Description
+
+
+fixed Fixed value expressed in px, em, ... 
+
+ Example below shows offset-x, offset-y and color
+ div { box-shadow: 2px 3px black; }  <br>
+<u>offset-y</u>
+Required. It is the vertical distance that can be either a positive or negative value. If offset-y is a negative value, the shadow will be placed above the element. It can be one of the following:
+
+
+Value
+
+Description
+
+
+fixed Fixed value expressed in px, em, ... 
+
+ Example below shows offset-x, offset-y and color
+ div { box-shadow: 3px 1px red; }  <br>
+<u>blur-radius</u>
+Optional and can not be a negative value. The larger the blur-radius value, the bigger the blur. It can be one of the following:
+
+
+Value
+
+Description
+
+
+fixed Fixed value expressed in px, em, ... 
+
+ Example below shows offset-x, offset-y, blur-radius and color
+ div { box-shadow: 3px 1px 2px #F5F5F5; } <br>
+<u>spread-radius</u>
+Optional. It can be either a positive or negative value. A positive spread-radius value will cause the shadow grow bigger. A negative spread-radius will cause the shadow to shrink. It can be one of the following:
+
+
+Value
+
+Description
+
+
+fixed Fixed value expressed in px, em, ... 
+
+ Example below shows offset-x, offset-y, blur-radius, spread-radius and color
+ div { box-shadow: 2px 2px 3px 1px black; } 
+
+</p>
+<img src="q2.png" class="image1">
+<h2>
+CSS: margin property</h2>
+
+
+<p class="para2">
+
+
+This CSS tutorial explains how to use the CSS property called margin with syntax and examples.
+
+
+Description
+
+The CSS margin property defines the margin on all sides of an element.
+
+
+Syntax
+
+The CSS margin property can be expressed with one, two, three or four values provided. And each value can be expressed as either a fixed value or as a percentage.
+
+One Value
+
+The syntax for the CSS margin property (with 1 value) is:
+margin: all;
+
+When one single value is provided, the margin value will apply to all four sides of the element (ie: top, right, bottom, left).
+
+Two Values
+
+The syntax for the CSS margin property (with 2 values) is:
+margin: top_bottom left_right;
+
+When two values are provided, the first value will apply to the top and bottom of the element. The second value will apply to the left and right sides of the element.
+
+Three Values
+
+The syntax for the CSS margin property (with 3 values) is:
+margin: top right_left bottom;
+
+When three values are provided, the first value will apply to the top of the element. The second value will apply to the right and left sides of the element. The third value will apply to the bottom of the element.
+
+Four Values
+
+The syntax for the CSS margin property (with 4 values) is:
+margin: top right bottom left;
+
+When four values are provided, the first value will apply to the top of the element. The second value will apply to the right side of the element. The third value will apply to the bottom of the element. The fourth value will apply to the left side of the element.
+
+The top, right, bottom, and left margin values can be one of the following:
+
+
+Value
+
+Description
+
+
+fixed Fixed value expressed in px, em, ...
+ div { margin: 5px; }
+ div { margin: 4em 5px; }
+ div { margin: 2px 5px 10px; }
+ div { margin: 4px 5px 2px 3px; } 
+percentage Percentage value
+ div { margin: 8%; }
+ div { margin: 4% 5%; }
+ div { margin: 2% 5% 8%; }
+ div { margin: 4% 5% 2% 3%; } 
+fixed and percentage
+ (in combination) Combination of fixed and percentage values
+ div { margin: 4% 5px; }
+ div { margin: 2em 5% 8px; }
+ div { margin: 4px 5em 2% 3px; } 
+auto Used for centering blocks
+ div { margin: 0 auto; }
+ div { margin: 4% auto; } 
+inherit Element will inherit the margin from its parent element
+ div { margin: inherit; } 
+
+<br>
+<b>Note</b><br>
+•Each value in the CSS margin property can be expressed as either a fixed value or as a percentage.<br>
+•You can combine fixed value and percentage values in the CSS margin property.<br>
+•Negative values are allowed in the CSS margin property.<br>
+•When the value is provided as a percentage, it is relative to the width of the containing block.<br>
+•See also margin-top, margin-bottom, margin-left, and margin-right.<br>
+
+</p>
+
+<p>
+<b><u>Font Name</u></b>
+
+Serif Serif, Times, "Times New Roman", Georgia, Palatino, "Palatino Linotype", "Book Antigua" <br> 
+Sans-Serif Sans-Serif, Arial, Helvetica, Verdana, Tahoma. <br>
+Monospace Monospace, Courier, "Courier New" <br>
+</p>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<!ELEMENT photo EMPTY  >
+<!ATTLIST photo src CDATA #REQUIRED
+				height CDATA #IMPLIED
+				width CDATA #IMPLIED
+				photo_id IDREF #IMPLIED >

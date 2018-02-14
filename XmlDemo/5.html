@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DOM Example</title>
+<script type="text/javascript">
+
+window.addEventListener("load", function(){
+document.querySelector("#showBCard").addEventListener("click", displayBusinessCard);
+
+});
+function displayBusinessCard(){
+var xmlData = document.getElementById("xmlData1");
+var bzcard= xmlData.getElementsByTagName("BusinessCard")[0];
+//text inside tag is also a child node
+var name= bzcard.getElementsByTagName("Name")[0].firstChild.data;
+var phoneLabel1= bzcard.getElementsByTagName("phone")[0].getAttribute("type");
+var phone1 = bzcard.getElementsByTagName("phone")[0].firstChild.data;
+var phoneLabel2= bzcard.getElementsByTagName("phone")[1].getAttribute("type");
+var phone2 = bzcard.getElementsByTagName("phone")[1].firstChild.data;
+var phoneLabel3= bzcard.getElementsByTagName("phone")[2].getAttribute("type");
+var phone3 = bzcard.getElementsByTagName("phone")[2].firstChild.data;
+var email= bzcard.getElementsByTagName("email")[0].firstChild.data;
+alert("Details are :"+ name + "\n "+ phoneLabel1+ " : "+ phone1+ "\n"+ phoneLabel2+ " : "+ phone2 +"\n"+ phoneLabel3+ " : "+ phone3);
+
+document.getElementById("Name").innerHTML= name;
+document.getElementById("work").innerHTML= phone1;
+document.getElementById("home").innerHTML= phone2;
+document.getElementById("fax").innerHTML= phone3;
+document.getElementById("email").innerHTML= email;
+
+document.getElementById("showEmail").addEventListener("click", function(){
+document.getElementById("email").style.display = "";
+});
+
+//document.querySelector can be used to retrieve any kind of css selector
+document.querySelector("#hideEmail").addEventListener("click", function(){
+document.getElementById("email").style.display = "none";
+});
+}
+
+</script>
+</head>
+<body>
+<xml id="xmlData1" style="display: none" >
+<BusinessCard>
+<Name>Shreya Malik</Name>
+<phone type="work">+91-7326723632</phone>
+<phone type="home">+91-32463743</phone>
+<phone type="fax">+91-34746364</phone>
+<email>shreya.malik@gmail.com</email>
+</BusinessCard>
+</xml>
+
+<div class="BusinessCard">
+<div class="Name" id="Name"></div>
+<div class="phone" id="work"></div>
+<div class="phone" id="home"></div>
+<div class="phone" id="fax"></div>
+<div class="email" id="email"></div>
+</div>
+<button id="showEmail" >Show Email</button>
+<button id="hideEmail" >Hide Email</button>
+<button id="showBCard">Show Business Card</button>
+</body>
+</html>

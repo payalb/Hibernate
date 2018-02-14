@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate(){
+if(document.getElementById("name").value=="admin"){
+alert("successful!");
+return true;
+}
+alert("validation failed!")
+return false;
+}
+
+</script>
+</head>
+<body>
+<form onsubmit="return validate();" action="success.html">
+<label>Username:</label><input type="text" name="username" id="name" required /><br>
+<label>Password:</label><input type="password" name="password" required/><br>
+<input type="submit">
+</form>
+</body>
+</html>

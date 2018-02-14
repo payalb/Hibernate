@@ -1,0 +1,29 @@
+Routing: diff url for diff content
+
+need ng-view to display content
+
+need ngRoute module as dependency and include angular-route.min.js in scripts
+
+use config for setting diff controllers for diff urls.
+
+Template given preference over templateUrl. Both don't work together.
+
+When route changes, 4 events are triggered:
+$routeChangeStart
+$locationChangeStart
+$locationChangeSuccess
+$routeChangeSuccess
+
+
+$scope.$on("$routeChangeStart",function(event, next, current){
+	if(!confirm("You sure you want to navigate to "+next.$$route.originalPath){
+	event.preventDefault();
+	}
+});
+
+to reload route:
+$scope.reloadData= function(){
+			alert($scope.homeMessage);
+			$route.reload();
+		
+	}

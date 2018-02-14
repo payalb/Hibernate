@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="para1">
+1) Element node
+2) Attribute Node
+3) Text Node
+</div>
+<div class="myClass"> This is another div</div>
+<br>
+<img src= "Desert.jpg" width="200px;" height= "200px;"/>
+<button onclick="applyStyle(); displayTag(); editImage();">Style Button </button>
+
+<script type="text/javascript">
+//Change Text
+function applyStyle(){
+var elem= document.getElementById("para1");
+elem.style.color= "red";
+elem.style.backgroundColor= "yellow";
+elem.style.fontStyle ="cursive";
+elem.innerHTML=  elem.innerHTML+ "<br> Hello There from javascript!!";
+}
+
+function displayTag(){
+var elems= document.getElementsByTagName("div"); //Builds a node list
+elems[1].innerHTML = "Updated text !"
+elems[1].style.color= "Green";
+}
+
+function displayTag(){
+var elems= document.getElementsByClassName("myClass"); //Builds a node list
+elems[0].innerHTML = "Class  text !";
+elems[0].style.color= "Purple";
+elems[0].style.fontWeight= "bolder";
+elems[0].textContent= elems[0].textContent + "Updated!";
+}
+//change image
+function editImage(){
+var elems= document.getElementsByTagName("img");
+elems[0].src="";
+elems[0].alt="No more images!"
+}
+
+//validation
+
+</script>
+</body>
+</html>

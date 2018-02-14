@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Box</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript">
+angular.module("myModule",[]).controller("myController", function($scope){
+
+$scope.employees= [{
+name: 'Shreya',
+marks: 32
+},{
+name: 'Divya',
+marks: 64
+},{
+name: 'Priyasha',
+marks: 64
+},{
+name: 'Priya',
+marks: 92
+}]
+})
+</script>
+</head>
+<body ng-controller="myController">
+Search: <input type="text" placeholder="Search.." ng-model="searchText.$">
+<ul>
+<li ng-repeat="employee in employees| filter: searchText">{{"Name :"+ employee.name +" - "+ employee.marks}}</li>
+</ul>
+</body>
+</html>

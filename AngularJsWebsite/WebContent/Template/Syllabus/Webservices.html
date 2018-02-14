@@ -1,0 +1,204 @@
+ <br><br>
+ <h2>WebServices Syllabus</h2>
+
+<ul>
+ <h4><u><li> An Introduction to Web Services</li></u></h4>  
+
+    Explaining the need for web services
+    Defining web services
+    Explaining the characteristics of a web service
+    Explaining the use of both XML and JSON in web services
+    Identifying the two major approaches to developing web services
+    Explaining the advantages of developing web services within a Java EE container
+
+<h4><u><li>XML</li></u></h4>  
+
+    Describing the Benefits of XML
+    Creating an XML Declaration
+    Assembling the Components of an XML Document
+    Declaring and Apply XML Namespaces
+    Validating XML Documents using XML Schemas
+    Creating XML Schemas
+
+<h4><u><li>JAXB</li></u></h4>  
+
+    Listing the Different Java XML APIs
+    Explaining the Benefits of JAXB
+    Unmarshalling XML Data with JAXB
+    Marshalling XML Data with JAXB
+    Compiling XML Schema to Java
+    Generating XML Schema from Java Classes
+    Applying JAXB Binding Annotations
+    Creating External Binding Configuration Files
+
+<h4><u><li>SOAP Web Services</li></u></h4>  
+
+    SOAP message structure
+    Using WSDL files to define web services
+    WS-I Basic Profile and WS-Policy
+
+<h4><u><li>Creating JAX-WS Clients</li></u></h4>  
+
+    Using tools to generate JAX-WS client artifacts
+    Calling SOAP web services using JAX-WS in a Java SE environment
+    Calling SOAP web services using JAX-WS in a Java EE environment
+    Using JAXB Binding customization with a SOAP web service
+    Creating a JAX-WS Dispatch client
+    Creating a client that consumes a WS-Policy enhanced services (WS-MakeConnection)
+
+<h4><u><li>RESTful Web Services</li></u></h4>  
+
+    Describing the RESTful architecture and how it can be applied to web services
+    Designing a RESTful web service and identify resources
+    Navigating a RESTful web service using hypermedia
+    Selecting the correct HTTP method to use when duplicate requests must be avoided
+    Identifying Web Service result status by HTTP response code
+    Version RESTful web services
+
+<h4><u><li>Creating RESTful Clients in Java</li></u></h4>  
+
+    Using Java SE APIs to make HTTP requests
+    Using the Jersey Client APIs to make HTTP requests
+    Processing XML and JSON in a RESTful web service client
+
+<h4><u><li>Bottom-Up JAX-WS Web Services</li></u></h4>  
+
+    Describing the benefits of Code First Design
+    Creating JAX-WS POJO Endpoints
+    Creating JAX-WS EJB Endpoints
+
+<h4><u><li>Top-Down JAX-WS Web Services</li></u></h4>  
+
+    Describing the benefits of WSDL First Design
+    Generating Service Endpoint Interfaces (SEIs) from WSDLs
+    Implementing Service Endpoint Interfaces
+    Customizing SEI Generation
+
+<h4><u><li>JAX-RS RESTful Web Services</li></u></h4>  
+
+    Download, Install, and Configure Jersey
+    Creating Application Subclasses
+    Creating Resource Classes
+    Creating Resource Methods, Sub-Resource Methods, and Sub-Resource Locator Methods
+    Producing and Consume XML and JSON content with JAX-RS
+
+<h4><u><li>Web Service Error Handling</li></u></h4>  
+
+    Describing how SOAP web services convey errors
+    Describing how REST web services convey errors
+    Returning SOAP faults
+    Returning HTTP error status codes
+    Mapping thrown Exceptions to HTTP status codes
+    Handling errors with SOAP clients
+    Handling errors with Jersey clients
+
+<h4><u><li>Security Concepts</li></u></h4>  
+
+    Explaining Authentication, Authorization, and Confidentiality
+    Applying Basic Java EE Security by using deployment descriptors (web.xml)
+    Creating users and groups and map them to application roles
+    Detailing possible web service attack vectors
+
+<h4><u><li>WS-Security</li></u></h4>  
+
+    Describing the purpose of WS-Policy, WS-SecurityPolicy, WS-Security
+    Configuring WebLogic Server for WS-Security
+    Applying WS-Policy to WebLogic JAX-WS Web Services
+    Signing and Encrypt SOAP Messages using WS-Security
+
+<h4><u><li>Web Service Security with Jersey</li></u></h4>  
+
+    Applying JSR-250 Security Annotations such as @RolesAllowed
+    Enabling an assortment of filters including the RolesAllowedResourceFilterFactory
+    Obtaining a SecurityContext and perform programmatic security
+    Authenticating using the Jersey Client API
+
+<h4><u><li>OAuth 1.1a with Jersey</li></u></h4>  
+
+    Describing the purpose of OAuth
+    Describing the request lifecycle when using OAuth
+    Creating OAuth enabled services using Jersey
+    Creating OAuth enabled clients using Jersey
+
+</ul>
+
+
+
+
+SOAP Web Services 
+Total Number of Days : 4
+
+Day 1
+
+Introduction to Course
+Elements of SOA
+Overview of the elements that make up a SOA-based system
+Web Services
+Introduce Web Services and their fit with SOA. 
+Introduce Core elements of a Web Services SOA. 
+SOAP, WSDL, UDD. 
+Outline other WS-* Standards. 
+Consider transactions with SOA and Web Services. 
+Discuss WS-Security.
+Basic JAX-WS Java Services
+Consider how web services can be created in Java.
+Look at the JAX-WS approach in detail. 
+Examine how JAX-WS works. 
+Look at the JAX-WS Annotations. 
+JAX-WS requirements on a POJO. 
+Creating JAX-WS services. 
+Implementing web service clients
+Practical 1: Building a Web Service and client
+
+Day 2
+RESTFul Java Services
+Introduction REST as a concept 
+Present the structure of a RESTFul System. 
+Consider how a RESTFul Web Service may be built. 
+Look at how JAX-WS supports REST. 
+Creating RESTFul services. 
+How to implement RESTFul Web service clients
+Practical 2: Building RESTful Web Service and client
+
+
+Data Binding in Java Web Services
+Data Transfer in Web Services. 
+Mapping Java Objects to XML
+Java Architecture for XML Binding (JAXB)
+Working with JAXB 
+Using JAXB in a WEB Service and its Client
+Practical 3: Using JAXB with web services
+
+
+Day 3
+
+EJB 3.0 based Web Services
+Introduce JAX-WS and EJB 3.0. 
+Overview of EJB 3.0 
+Publishing an EJB Stateless Bean as a JAX-WS Service
+Invoking the service form a client.
+Practical 4: Creating an EJB 3.0 based Web Service
+Security and Web Services
+Introduce security for remote applications. 
+Consider Web Service security. 
+Examine the differences from traditional web apps. 
+Look at the Web Service security specifications. 
+Examine how to deploy a secure web service.
+Practical 5: Securing a web service
+
+
+Day 4
+
+Web Services and Registries
+What is a service registry? And why have one. 
+What is UDDI? What is JAXR 
+Implementing a JAXR Client
+Practical 7: Exploring JAXR
+SOA Design Patterns
+Types of SOA interaction 
+Design patterns help at architectural level
+SOA Specific Design patterns 
+Asynchronous message patterns 
+Conversational patterns 
+Process Patterns 
+Architectural patterns

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Styling Code block example</title>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+	Use &lt;mark&gt; for highlighting purpose. Used code here:
+	<code>&lt;mark&gt;</code>
+	for highlighting purpose.
+
+<br><br>
+<pre class="pre-scrollable">
+This pre is used for styling the code block.
+The pre-scrollable class provides a scrollbar in the code.
+Pre tag preserves the whitespaces..
+<code>
+public class Program
+{
+	private int id;
+	
+	public static void main(String args[])
+	{
+		Customer customer1= new Customer();
+		Customer customer2= new Customer();
+	}
+	
+	public Program(int id)
+	{
+		this.id= id;
+	}
+	
+	public int getId()
+	{
+		return id;
+	}
+	
+}
+</code>
+</pre>
+
+Id is : <var>id</var><br>
+
+Output: <samp>1001</samp><br>
+
+Keyboard shortcut for copying code is <kbd>Ctrl</kbd> <kbd>C</kbd>
+	<script src="bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

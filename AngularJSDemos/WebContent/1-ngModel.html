@@ -1,0 +1,25 @@
+<!-- This example shows the use of ng-model attribute.
+ Using this we set the model object from the view page
+  whose value can then be retrieved using {{expression}} -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/
+javascript" src="scripts/angular.min.js"></script>
+<script>
+ angular.module("myApp",[]).controller("myCtrl", function($scope){
+	alert($scope.message);
+	this.x= 5;
+ })
+</script>
+</head>
+<body ><div ng-controller="myCtrl as o">
+Please enter your name:
+<input type="text"  value="Payal" ng-model="message"/><br>
+Hello {{message}}
+{{o.x}}
+</div>
+</body>
+</html>

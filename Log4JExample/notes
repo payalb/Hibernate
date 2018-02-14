@@ -1,0 +1,20 @@
+1) Used for logging purpose
+2) Need log4j.jar. Add it to the build path
+3) Level object: OFF, DEBUG, INFO, ERROR, FATAL, WARN, ALL
+4) Filter: Whether it should be logged or not.
+5) Has configuration file: log4j.properties. Properties in key value format
+6) Appender: where to write the logs
+7) layout: how to display the logs
+8) Use ${variablename} to use the value
+9) Pattern layout %m%n: each message followed by newline
+
+
+1) OFF: nothing logged into the file
+
+ALL< Debug 1000 < INFO 2000 < Warn 3000 <Error 4000 < Fatal 5000 <OFF
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var number1 = Number(prompt("Please enter the number", ""));
+	switch (number1) {
+	case 1:
+		alert("1");
+		break;
+	case 5:
+		alert("5");
+		break;
+	default:
+		alert(number1);
+	}
+
+	var output = number1 <= 5 ? "number is less than/equal 5"
+			: "Number is greater than 5";
+	alert(output);
+	
+	 number1 <= 5 ? (alert("number is less than / equal 5"), 
+	 					alert("number is"+ number1))
+	 					:(alert("number is greater than 5"));
+	
+	
+	while(number1<=10){
+	document.write(number1++ + "<br>");
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

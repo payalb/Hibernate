@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- To tell the IE to use the latest rendering engine. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>: link to j astra
+     
+ <div class="container">
+ //draws a container with padding around it. Can use container-fluid as well. Bootstrap grid also require the container inside of them
+ 
+ <div class="page-header">
+ //will include space between any of the text as well  as in-large any of the text inside of it. Also provides underline after the text is displayed.
+ </div>
+ 
+ <div class="jumbotron">
+ //enlarge your fonts and place everything inside of great box by default with rounded corners. WE can change the color and background color of it. If used outside container will fill teh complete width
+ //To make the jumbotron full width, and without rounded corners, add the .jumbotron-fluid modifier class and add a .container or .container-fluid within.
+ <p>
+ </div>
+ 
+ 
+ //buttons: even with links, u can make them as buttons :<a href="" class="btn btn-lg btn-default disabled" role="button" >Home</a>
+ //disabled is to disable the link
+ 
+ <button type="submit" class="btn btn-danger" role="button" >Button</button>
+ //other classes: btn-primary btn-sm btn-success btn-xs btn-lg btn-warning btn-link . btn: default button, btn-lg: large button btn-xs : extra small button btn-sm: small button
+ //can use disabled="disabled" to disable a button.
+ <input type="button" value="Info" class="btn btn-info">
+ •btn-default for white
+•btn-primary for dark blue
+•btn-success for green
+•btn-info for light blue
+•btn-warning for orange
+•btn-danger for red
+ There are some more helper classes for buttons available: 
+•btn-block will make the button span across the whole grid
+•active will make the button look like it's currently clicked
+•disabled will make the button unable to be clicked and appear faded.
+ 
+ </div>

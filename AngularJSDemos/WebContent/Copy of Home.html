@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1" >
+<title>Bansal Institute for Java/J2ee</title>
+<script>	
+	document.write('<base href="' + document.location + '" />');
+</script>
+
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-ui-router.min.js"></script>
+<link href="style.css" rel="stylesheet">
+<script type="text/javascript" src="scripts/websiteHome.js"></script>
+
+</head>
+<body>
+	<header>
+		<h1 align="center">BANSAL CORPORATE TRAINING INSTITUTE FOR JAVA /
+			J2EE</h1>
+			
+			<a ui-sref="Home" ><img src="images/homepage.jpg"   height="80px;"
+				width="80px" align="right"/></a>
+<br>
+		<div align="center">
+			<h3>Online Trainings&nbsp; &nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;Classroom Trainings&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+				&nbsp;Buy a Project&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+				Syllabus&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;Tutorials&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Practice
+				Questions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Us</h3>
+			<a ui-sref="OnlineTrainingForm"><img src="images/OnlineTraining.jpg"
+				height="140px;" width="140px"></a>&nbsp; <a
+				ui-sref="ClassroomTrainingForm"><img src="images/ClassroomTraining.jpg"
+				height="140px;" width="140px"></a> &nbsp;<a ui-sref="Projects"><img
+				src="images/Projects.png" height="140px;" width="140px"></a>&nbsp;<a
+				ui-sref="Syllabus"><img src="images/Syllabus.jpg" height="140px;"
+				width="140px"></a> &nbsp;<a
+				ui-sref="StudyMaterial"><img src="images/SM.jpg" height="140px;"
+				width="140px"></a> &nbsp;<img src="images/PracticeQuestion.jpg" height="140px;"
+				width="140px">&nbsp;<a ui-sref="ContactUs"><img
+				src="images/ContactUs.jpg" height="140px;" width="140px"></a><br>
+		</div>
+
+
+
+
+	</header>
+	<div>
+		<ui-view></ui-view>
+	</div>
+
+	<footer>
+		<br> <b>Contact us for more details!!</b><br>
+		<br>
+
+		<marquee>Click on above images to navigate through the site!</marquee>
+	</footer>
+</body>
+</html>

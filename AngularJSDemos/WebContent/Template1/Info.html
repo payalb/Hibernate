@@ -1,0 +1,301 @@
+<p>In this article we will go through the next useful feature of AngularJS called Routing. Also we will see how we can divide a single page application in multiple views. As we add more and more logic to an app, it grows and soon become difficult to manage. Dividing it in Views and using Routing to load different part of app helps in logically dividing the app and making it more manageable.</p>
+<p>Routing helps you in dividing your application in logical views and bind different views to Controllers. </p>
+<p><img src="./angularjs-routing-view-controller.png" alt="angularjs-routing-view-controller" width="576" height="175"/></p>
+<p>In above diagram we create two Route url /ShowOrders and /AddNewOrder. Each points to a specific view and is managed by a controller. Don&#8217;t panic if it does not make any sense. Soon we will see some code and it all will be clear.</p>
+<h2>1. Introduction to $routeProvider</h2>
+<p>The magic of Routing is taken care by a service provider that Angular provides out of the box called $routeProvider. An <a href="angularjs-service-factory-tutorial/">Angular service</a> is a singleton object created by a service factory. These service factories are functions which, in turn, are created by a service provider. The service providers are constructor functions. When instantiated they must contain a property called $get, which holds the service factory function. </p>
+<p>When we use AngularJS&#8217;s dependency injection and inject a service object in our Controller, Angular uses $injector to find corresponding service injector. Once it get a hold on service injector, it uses $get method of it to get an instance of service object. Sometime the service provider needs certain info in order to instantiate service object. </p>
+<p>Application routes in Angular are declared via the <code>$routeProvider</code>, which is the provider of the $route service. This service makes it easy to wire together controllers, view templates, and the current URL location in the browser. Using this feature we can implement deep linking, which lets us utilize the browser&#8217;s history (back and forward navigation) and bookmarks.</p>
+<p><b>Syntax to add Routing</b><br />
+<!-- <!-- Below is the syntax to add routing and views information to an angular application. We defined an angular app &#8220;sampleApp&#8221; using angular.module method. Once we have our app, we can use <code>config()</code> method to configure $routeProvider. $routeProvider provides method <code>.when()</code> and <code>.otherwise()</code> which we can use to define the routing for our app.</p>
+	<pre ><code >var sampleApp = angular.module('phonecatApp', []);
+	 
+sampleApp .config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/addOrder', {
+        templateUrl: 'templates/add-order.html',
+        controller: 'AddOrderController'
+      }).
+      when('/showOrders', {
+        templateUrl: 'templates/show-orders.html',
+        controller: 'ShowOrdersController'
+      }).
+      otherwise({
+        redirectTo: '/addOrder'
+      });
+  }]);
+</code></pre>
+<p>In above code we defined two urls <code>/addOrder</code> and <code>/showOrders</code> and mapped them with views <code>templates/add-order.html</code> and <code>templates/show-orders.html</code> respectively. When we open http://app/#addOrder url in browser, Angular automatically matches it with the route we configures and load add-order.html template. It then invokes <code>AddOrderController</code> where we can add logic for our view.</p>
+<h3>1.1. Hello World AngularJS + Routing</h3>
+<p>Let us go through an example in AngularJS and use Routing to load different templates at runtime.</p>
+<p>Below sample1.html file is the main html file. It includes AngularJS library and define structure for our app. We have two links: Add New Order and Show Order. Each link loads template in below section.<br />
+<i>sample1.html</i></p>
+<pre  data-line="7,18,23,24" ><code >&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;AngularJS Routing example&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body ng-app=&quot;sampleApp&quot;&gt;
+
+    
+			&lt;ul &gt;
+				&lt;li&gt;&lt;a href=&quot;#AddNewOrder&quot;&gt; Add New Order &lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#ShowOrders&quot;&gt; Show Order &lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	
+		  	&lt;div ng-view&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;/div&gt;
+    &lt;/div&gt;
+	&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4>ng-view</h4>
+<p>One thing worth noting is the ng-view directive. In our angular app, we need to define ng-app directive once. This becomes the placeholder for views. Each view referred by the route is loaded in this section of document. </p>
+<p>You can define ng-view in main html file in one of the below way.</p>
+<pre ><code >&lt;div ng-view&gt;&lt;/div&gt;
+..
+&lt;ng-view&gt;&lt;/ng-view&gt;
+..
+</code></pre>
+<h3>1.2. Add Routing in AngularJS</h3>
+<p>In above sample1.html file we included a javascript file app.js which holds the application logic. Below is the content of app.js. </p>
+<p><i>app.js</i></p>
+<pre ><code >//Define an angular module for our app
+var sampleApp = angular.module('sampleApp', []);
+
+//Define Routing for app
+//Uri /AddNewOrder -&gt; template add_order.html and Controller AddOrderController
+//Uri /ShowOrders -&gt; template show_orders.html and Controller AddOrderController
+sampleApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/AddNewOrder', {
+		templateUrl: 'templates/add_order.html',
+		controller: 'AddOrderController'
+	}).
+      when('/ShowOrders', {
+		templateUrl: 'templates/show_orders.html',
+		controller: 'ShowOrdersController'
+      }).
+      otherwise({
+		redirectTo: '/AddNewOrder'
+      });
+}]);
+
+
+sampleApp.controller('AddOrderController', function($scope) {
+	
+	$scope.message = 'This is Add new order screen';
+	
+});
+
+
+sampleApp.controller('ShowOrdersController', function($scope) {
+
+	$scope.message = 'This is Show orders screen';
+
+});
+</code></pre>
+<p>We first use .config() method to define $routeProvider configuration. Also in the same file we define two controllers AddOrderController and ShowOrdersController. In a real world application these controllers will hold a lot of logic but for example sake we just define a message property on $scope which later we use to display on view.</p>
+<p>Notice how we used otherwise() method to define a default route. In case routeProvider does not matche with any url, it redirects to default route.</p>
+<pre ><code >...
+otherwise ({
+	redirectTo: '/AddNewOrder'
+});
+</code></pre>
+<h3>1.3. Add HTML template files</h3>
+<p>Our app.js is ready. We still needs to define two html templates. These are partial templates of our app. </p>
+<p><i>templates/add_order.html</i></p>
+<pre ><code >&lt;h2&gt;Add New Order&lt;/h2&gt;
+
+{{ message }}
+
+</code></pre>
+<p>add_order.html template should have an html form for adding new orders. For sake of simplicity we just show a message.</p>
+<p><i>templates/show_orders.html</i></p>
+<pre ><code>&lt;h2&gt;Show Orders&lt;/h2&gt;
+
+{{ message }}
+
+</code></pre>
+<h3>1.4. Online Demo</h3>
+<p>Click links in below example to load different template based on Uri.<br />
+<iframe src="/sample.html" frameborder="0" width="100%" height="200px"></iframe></p>
+<p>Demo link: <a target="_new" rel="nofollow" href="http://plnkr.co/edit/geb5fh1Ns4fZC5XDOvaV?p=preview">Plnkr.co</a></p>
+<h2>2. How to pass Parameters in Route Urls</h2>
+<p>We saw how to define route in above example. Now let us see how can we define parameters in route urls.</p>
+<p>Consider below scenario. We want to display details of different orders. Based on a parameter order_id we will define order details in view.<br />
+<img src="./angularjs-route-parameters.png" alt="angularjs-route-parameters" width="647" height="133"  /></p>
+<p>In angular while define route we can define parameters using <code>orderId</code> in url. For example:</p>
+<pre ><code >when('/ShowOrder/:orderId', {
+      templateUrl: 'templates/show_order.html',
+      controller: 'ShowOrderController'
+});
+</code></pre>
+<p>And we can read the parameter in ShowOrderController by using <code>$routeParams.orderId</code>.</p>
+<pre ><code>...
+$scope.order_id = $routeParams.orderId;
+...
+</code></pre>
+<p>Let us checkout a sample application. Below sample2.html is main html page which describe the structure. It contains order information data in tabular format. Each order has a &#8220;show details&#8221; link. This link uses parametrize route url to load order detail screen.</p>
+<p><i>sample2.html</i></p>
+<pre ><code >&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;AngularJS Routing example&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body ng-app=&quot;sampleApp&quot;&gt;
+
+		&lt;table &gt;
+			&lt;thead&gt;
+			  &lt;tr&gt;
+				&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Order No.&lt;/th&gt;&lt;th&gt;Details&lt;/th&gt;&lt;th&gt;&lt;/th&gt;
+			  &lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+			  &lt;tr&gt;
+				&lt;td&gt;1&lt;/td&gt;&lt;td&gt;1234&lt;/td&gt;&lt;td&gt;15&quot; Samsung Laptop&lt;/td&gt;
+				&lt;td&gt;&lt;a href=&quot;#ShowOrder/1234&quot;&gt;show details&lt;/a&gt;&lt;/td&gt;
+			  &lt;/tr&gt;
+			  &lt;tr&gt;
+				&lt;td&gt;2&lt;/td&gt;&lt;td&gt;5412&lt;/td&gt;&lt;td&gt;2TB Seagate Hard drive&lt;/td&gt;
+				&lt;td&gt;&lt;a href=&quot;#ShowOrder/5412&quot;&gt;show details&lt;/a&gt;&lt;/td&gt;
+			  &lt;/tr&gt;
+			  &lt;tr&gt;
+				&lt;td&gt;3&lt;/td&gt;&lt;td&gt;9874&lt;/td&gt;&lt;td&gt;D-link router&lt;/td&gt;
+				&lt;td&gt;&lt;a href=&quot;#ShowOrder/9874&quot;&gt;show details&lt;/a&gt;&lt;/td&gt;
+			  &lt;/tr&gt;
+			&lt;/tbody&gt;
+		  &lt;/table&gt;
+
+		&lt;div ng-view&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><i>app.js</i></p>
+<pre  data-line="6,15" ><code >var sampleApp = angular.module('sampleApp', []);
+
+sampleApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/ShowOrder/:orderId', {
+	templateUrl: 'templates/show_order.html',
+	controller: 'ShowOrderController'
+      });
+}]);
+
+
+sampleApp.controller('ShowOrderController', function($scope, $routeParams) {
+
+	$scope.order_id = $routeParams.orderId;
+
+});
+</code></pre>
+<p><b>Note:</b> Don&#8217;t forget to inject <code>$routeParam</code> parameter in controller. Otherwise you wont be able to use it.</p>
+<p><i>templates/show_order.html</i></p>
+<pre ><code >&lt;h2&gt;Order #{{order_id}}&lt;/h2&gt;
+
+Here are the details for order &lt;b&gt;#{{order_id}}&lt;/b&gt;.
+
+</code></pre>
+<h3>2.1 Online Demo</h3>
+<p>Click the show details links on different orders.<br />
+<iframe src="/sample.html" frameborder="0" width="100%" height="300px"></iframe></p>
+<p>Demo link: <a target="_new" rel="nofollow" href="http://plnkr.co/edit/MxJkCpJDKXDNyYc1web8?p=preview">Plnkr.co</a></p>
+<h2>3. How to Load local views (Views within script tag)</h2>
+<p>It is not always that you want to load view templates from different files. Sometimes the view templates are small enough that you might want them ship with main html instead of keeping them in separate html files. </p>
+<h3>3.1 ng-template directive</h3>
+<p>You can use ng-template to define small templates in your html file. For example:</p>
+<pre ><code >&lt;script type=&quot;text/ng-template&quot; id=&quot;add_order.html&quot;&gt;
+	&lt;h2&gt; Add Order &lt;/h2&gt;
+	{{message}}
+&lt;/script&gt;
+</code></pre>
+<p>Here we defined a template &#8220;add_order.html&#8221; inside &lt;script&gt; tag. Angular will automatically load this template in ng-view whenever add_order.html is referred in route.</p>
+<p>Let us quickly go through a sample app where we use local view definitions.</p>
+<p>sample3.html defines structure of app. It is similar to the first example that we saw (sample1.html) with a bit of change. We defined two views add_order.html and show_orders.html within sample1.html as &lt;script&gt; tag.<br />
+<i>sample3.html</i></p>
+<pre  data-line="24,25,26,27,28,29,31,32,33,34,35,36" ><code >&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;AngularJS Routing example&lt;/title&gt;
+    &lt;link href=&quot;http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;/head&gt;
+
+  &lt;body ng-app=&quot;sampleApp&quot;&gt;
+
+    &lt;div &gt;
+		&lt;div &gt;
+		&lt;div &gt;
+		   &lt;ul &gt;
+			&lt;li&gt;&lt;a href=&quot;#AddNewOrder&quot;&gt; Add New Order &lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#ShowOrders&quot;&gt; Show Order &lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div &gt;
+		  	&lt;div ng-view&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;/div&gt;
+    &lt;/div&gt;
+
+	&lt;script type=&quot;text/ng-template&quot; id=&quot;add_order.html&quot;&gt;
+
+		&lt;h2&gt; Add Order &lt;/h2&gt;
+		{{message}}
+
+	&lt;/script&gt;
+
+	&lt;script type=&quot;text/ng-template&quot; id=&quot;show_orders.html&quot;&gt;
+
+		&lt;h2&gt; Show Orders &lt;/h2&gt;
+		{{message}}
+
+	&lt;/script&gt;
+
+
+	&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The app.js is similar to first sample. There is no change in app.js. Refer to first demo example if you wanna check app.js.</p>
+<h3>3.2 Online Demo</h3>
+<p>Click the show details links on different orders.<br />
+<iframe src="/sample.html" frameborder="0" width="100%" height="200px"></iframe></p>
+<p>Demo link: <a target="_new" rel="nofollow" href="http://plnkr.co/edit/nYsORXGahmGOVyNmYWaF?p=preview">Plnkr.co</a></p>
+<h2>4. Add Custom Data to RouteProvider</h2>
+<p>The $routeProvider provides methods when() and otherwise() which we used to define url routes. Sometime we might want to pass custom data based on certain route. For example you might use same Controller in different routes and use some custom data. For example:</p>
+<pre  data-line="4,9,14" ><code >when('/AddNewOrder', {
+	templateUrl: 'templates/add_order.html',
+	controller: 'CommonController',
+	foodata: 'addorder'
+}).
+when('/ShowOrders', {
+	templateUrl: 'templates/show_orders.html',
+	controller: 'CommonController',
+	foodata: 'showorders'
+});
+
+sampleApp.controller('CommonController', function($scope, $route) {
+	//access the foodata property using $route.current
+	var foo = $route.current.foodata;
+	
+	alert(foo);
+	
+});</code></pre> --> -->
+<p>In above code we defined a new property &#8220;foodata&#8221; while defining route. This property is then accessed in controller using <code>$route.current.foodata</code>.</p>

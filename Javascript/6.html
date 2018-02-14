@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+try{
+	document.write("In try!!"+"<br>");
+	//syntax error
+	throw {
+		error: "404 error",
+		message: "My given message"
+	};
+}catch( e){
+	document.write("In catch!!"+"<br>");
+	document.write(e.message+"<br>");
+	document.write(e.error+"<br>");
+	
+}finally{
+	document.write("In finally!!"+"<br>");
+}
+document.write("Must get executed!!"+"<br>");
+</script>
+</head>
+
+<body>
+</body>
+</html>

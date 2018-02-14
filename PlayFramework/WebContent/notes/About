@@ -1,0 +1,35 @@
+High velocity web framework for Java and Scala.
+simple http interface 
+works with http using methods: get, post
+make changes, refresh to see the changes.
+stateless
+asynchronous prog model
+reactive mobile and web apps: can be used on new technologies, millis response time, react to events
+event driven model
+data is pushed from the application. react to users.
+Core of the framework is Akka hence event driven
+►Non-blocking I/O, scalable, fault-tolerant
+
+uses jboss netty server to handle requests. : event driven, asynchronous, non-blocking
+support for html5 websocket and server sent events
+
+Modern web & mobile.
+
+Play was built for needs of modern web & mobile apps. 
+►RESTful by default
+►Asset Compiler for CoffeeScript, LESS, etc
+►JSON is a first class citizen
+►Websockets, Comet, EventSource
+►Extensive NoSQL & Big Data Support
+
+ Activator includes the sbt build tool, a quick-start GUI, and a catalog of template applications.
+
+app
+conf: config files, routing files
+project: build related files
+public: all static files: html, js , css
+controllers: 
+
+
+first routing component: url to action. action methods defined in controllers can access model and render view.
+routes.conf: http-method url 

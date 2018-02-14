@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Events</title>
+<script>
+function applyStyles(){
+	document.body.style.backgroundColor= "aqua";
+}
+
+function changePosition(){
+	document.getElementsByTagName("p")[0].innerHTML= "He he he";
+}
+
+function replaceAgain(){
+	document.getElementsByTagName("p")[0].innerHTML= "Try to click me!";
+}
+</script>
+</head>
+<body onload="applyStyles();">
+<p onmouseover="changePosition()" onmouseout="replaceAgain()">Click here</p>
+</body>
+</html>

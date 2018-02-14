@@ -1,0 +1,7 @@
+1) css: 
+.class{
+background-color: black;
+color:white
+}
+
+ui-sref-active="css class" This will remove these styles from inactive state as well.

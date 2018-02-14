@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Route params</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-route.min.js"></script>
+<script type="text/javascript" src="scripts/eighteen.js"></script>
+<script>
+	document.write('<base href="' + document.location + '" />');
+</script>
+</head>
+<body ng-init="employees=[{name:'Ben', id:1},{name:'Dev', id:2}, {name:'Ashish', id:3},{name:'Anu', id:4},{name:'Divya', id:5}]">
+<div ng-repeat="employee in employees"><a href="employee/{{employee.id}}">{{employee.name}}</a></div>
+
+<ng-view></ng-view>
+</body>
+</html>

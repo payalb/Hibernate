@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo1</title>
+<script src="scripts/angular.min.js"></script>
+<script type="text/javascript">
+angular.module("mod1",[]).run(["$rootScope", function ($rootScope){
+	$rootScope.x= 10;
+}]).controller("myCtrl", function($scope){
+	$scope.name="Shreya";
+	this.age=23;
+});
+</script>
+</head>
+<body ng-app="mod1" ng-controller="myCtrl as o">
+	{{name}}
+	{{x}}
+	{{o.age}}
+</body>
+</html>

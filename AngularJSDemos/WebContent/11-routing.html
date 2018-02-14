@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Routing</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-route.min.js"></script>
+<script type="text/javascript">
+angular.module("myModule",['ngRoute']).config(function($routeProvider){
+	
+	$routeProvider.when("/home", {
+		templateUrl: "Template1/Home.html",
+		controller: "homeController",
+		controllerAs: "homeCtrl",
+		caseInsensitiveMatch: true,
+		
+	}).otherwise({
+		template: "<h1>Hello</h1>",
+		controller: "helloController"
+	});
+}).controller("homeController", function() {
+	this.homeMessage = "Home Page"
+}).controller("helloController", function() {
+	
+});
+
+</script>
+</head>
+<body>
+<a href="#/home">HomePage</a>&nbsp;<a href="#/hello">WelcomePage</a>
+<br><br>
+<ng-view></ng-view>
+</body>
+</html>

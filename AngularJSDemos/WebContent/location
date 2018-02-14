@@ -1,0 +1,8 @@
+$location.path('/dashboard');: redirect to this url
+
+
+function($scope, $location, $anchorScroll) {
+			$scope.scrollTo = function(scrollLocation) {
+				$location.hash(scrollLocation);
+				$anchorScroll();
+			}

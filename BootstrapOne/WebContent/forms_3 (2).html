@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Forms example</title>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="container">
+		<form>
+			<h2>Please fill in the form:</h2>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="username">Name:</label> <input type="text"
+						class="form-control" id="username" placeholder="Full Name" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="password">Password:</label> <input type="password"
+						class="form-control" id="password" placeholder="Password" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5  form-group-sm">
+					<label for="dob">Date of Birth:</label> <input type="date"
+						class="form-control" id="dob" placeholder="dd/mm/yyyy" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="email">Email:</label>
+					<div class="input-group">
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-envelope"></span></span> <input type="email"
+							class="form-control" id="email" placeholder="Email address" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="exp">Work Experience:</label> <input type="number"
+						class="form-control" id="exp"
+						placeholder="Work experience in years" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="website">Personal Website:</label> <input type="text"
+						class="form-control" id="website"
+						placeholder="Your website address" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5">
+					<label for="idNo">Pan Card Number:</label>
+					<div class="input-group">
+						<input type="text" class="form-control" id="idNo"
+							placeholder="Pan Card Number" /> <span class="input-group-btn">
+							<button id="cut" class="btn btn-default">
+								<span class="glyphicon glyphicon-scissors" title="cut"> </span>
+							</button>
+							<button id="copy" class="btn btn-default">
+								<span class="glyphicon glyphicon-copy"  title="copy"></span>
+							</button>
+							<button id="paste" class="btn btn-default">
+							<span class="glyphicon glyphicon-paste" title="paste"></span>
+							</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="fees">Fees:</label>
+					<div class="input-group">
+						<span class=" input-group-addon">$</span><input type="number"
+							class="form-control" id="fees" placeholder="Fees" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="mode">Preferred mode of Learning:</label>
+					<div class="checkbox">
+						<label> <input type="checkbox" id="mode" value="online" />
+							Online Training
+						</label> <label> <input type="checkbox" id="mode"
+							value="classroom" /> Classroom Training
+						</label> <label> <input type="checkbox" id="mode"
+							value="studyMaterial" /> Study Material
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 ">
+					<label for="resume">Resume:</label>
+					<div class="input-group">
+
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-file"></span>
+						</span> <input type="file" class="form-control" id="resume"
+							placeholder="Upload Resume" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-lg-5 col-md-5 form-group-sm">
+					<label for="comments">Comments/Query:</label>
+					<textarea class="form-control" id="comments" rows="7"
+						placeholder="Comments"></textarea>
+				</div>
+			</div>
+			<div>
+				<input type="submit" class="btn btn-default" value="Login" />
+			</div>
+		</form>
+	</div>
+	<script src="bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

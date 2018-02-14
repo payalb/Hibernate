@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo</title>
+<script src="scripts/angular.js"></script>
+
+<script type="text/javascript">
+var mod1= angular.module("module1",[]);
+mod1.controller("ctrl1", function($scope){
+	$scope.names=["Ram","shyam"];
+});
+</script>
+</head>
+<body>
+<div  ng-app="module1" ng-controller="ctrl1">
+
+<ol>
+<li ng-repeat="name in names">{{name}}</li>
+</ol>
+
+</div>
+
+</body>
+</html>

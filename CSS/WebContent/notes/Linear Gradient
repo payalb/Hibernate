@@ -1,0 +1,28 @@
+linear gradient: by default is top-bottom
+background: linear-gradient(blue, yellow);
+
+Can change it to horizontal:
+background: linear-gradient(to right, blue, yellow);
+background: linear-gradient(to left, blue, yellow);
+
+for diagonal:
+background: linear-gradient(to top right, blue, yellow);
+background: linear-gradient(to bottom left, blue, yellow);
+
+background: linear-gradient(30deg, blue, yellow);
+
+Can add more colors:
+background: linear-gradient(pink, blue, yellow);
+
+If we don't want both colors to be 50-50:
+background: linear-gradient(pink, yellow 20%);
+=> YELLOW WILL START FROM 20% ONWARDS
+
+To not have shadow effect must give it as:
+background: linear-gradient(pink 50%, yellow 50%);
+
+rgba: red green blue alpha
+
+background: linear-gradient(rgba(255,255,0, 0.0), rgba(0,0,255, 1));
+
+background: linear-gradient(to right, rgba(255,255,0, 0.0), rgba(0,0,255, 1));

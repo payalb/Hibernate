@@ -1,0 +1,9 @@
+watch variable ourself eg: check how many times textbox updated.
+
+$scope.$watch("myText", function(newValue, oldValue){
+console.log(newValue);
+$scope.counter++;
+})
+
+digest: iterate over watch variables and see if any got updated. Used when using vanillajs with angularjs
+$scope.$digest();

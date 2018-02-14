@@ -1,0 +1,6 @@
+xpath:
+
+
+entity: to create shortcut in a dtd file.
+
+<!entity % pd "(#PCDATA)' >

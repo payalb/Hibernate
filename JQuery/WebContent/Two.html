@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
+
+</head>
+
+<body>
+	<input type="button" id="button1" value="Click">
+	<script type="text/javascript">
+		jquery(document).ready(function() {
+			$("#button1").click(function() {
+				alert("clicked jquery!");
+			});
+		});
+		/* ready ensures dom is fully loaded */
+		/* 	if (document.addEventListener) {
+				document.getElementById("button1").addEventListener("click",
+						function() {
+							alert("clicked js");
+						}, false);
+			} else {
+				document.getElementById("button1").attachEvent("onclick",
+						function() {
+							alert("clicked js");
+						});
+			} */
+	</script>
+</body>
+</html>

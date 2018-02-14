@@ -1,0 +1,56 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>New elements</title>
+<script>
+function addNewPara(){
+
+//para.innerHTML= "dynamic content";
+var div= document.getElementsByTagName("div")[0];
+var para = document.createElement("p");
+div.appendChild(para);
+var textNode= document.createTextNode("This text is a part of text node");
+para.appendChild(textNode);
+var attr=document.createAttribute("class");
+attr.value="p1";
+para.setAttributeNode(attr);
+//div.removeChild(para);
+
+}
+
+function applyStyle(){
+var div= document.getElementsByTagName("div")[0];
+var child1= div.childNodes[1];//whitespacenode also included
+child1.style.color= "grey";
+var child2= div.firstElementChild;
+child2.style.backgroundColor ="yellow";
+var child3= div.lastElementChild;
+child3.style.color= "orange";
+
+
+var child = document.getElementsByClassName("p1")[0];
+var parent= child.parentNode;
+parent.style.fontWeight= "bolder";
+var parent1= child.parentElement;
+parent.style.fontFamily= "cursive";
+
+var sibling1 = child.nextElementSibling;
+sibling1.style.border = "2px solid grey";
+var sibling2 = child.previousElementSibling;
+sibling2.style.fontSize = "45px";
+var sibling3 = child.previousSibling; //whitespaces to be considered
+
+
+
+}
+</script>
+</head>
+<body>
+<div>
+<p>Old para</p>
+</div>
+<button onclick="addNewPara()" >Click here to add para</button>
+<button onclick="applyStyle()">Click here to add style</button>
+</body>
+</html>

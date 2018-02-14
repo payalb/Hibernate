@@ -1,0 +1,9 @@
+bootsrap.css: styles
+bootstrap.css.map: during development
+bootstrap.min.css: spaces removed. minified version
+bootstrap.theme.css: enhanced experience: shadow, radius..
+
+glyphicons: diff fonts for diff browsers
+
+bootstrap has dependency on jquery
+npm: from node.js

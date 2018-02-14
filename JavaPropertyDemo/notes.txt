@@ -1,0 +1,33 @@
+Property:
+
+1) extension: .properties
+2) comments: begin with #
+3) The keywords can contain dots and underscores but not spaces or = 
+4) You can use _ (underscore) in key names to represent a space.
+5) The values can contain dots, underscores, spaces, and =.
+
+
+Two type of property file:
+1) User created: 
+2) System property file: User inform, environment info
+
+
+To open a user property file:
+1) Create the Property object
+1) FileReader: to read the file
+2) load method: load the property file from the reader
+3) getProperty(key) method to fetch the value of the key
+
+
+To create a property file:
+1) Create the Property object
+2) FileWriter to write the property file
+3) Property.store to write it into the property file
+4) setProperty(key, value) to set the key and value
+
+
+
+
+
+
+

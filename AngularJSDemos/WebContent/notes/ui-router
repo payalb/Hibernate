@@ -1,0 +1,55 @@
+Intro to ui-router
+Where to get ui-router module and include it in app.
+
+To include ui-router in app, follow all of the below steps:
+1) Reference ui-router CDN link.
+2) Add ui-router as module dependency
+3) Add ui-view directive in the layout page. 
+
+CDN link for ui-router:
+
+https://cdnjs.com/libraries/angular-ui-router
+
+Configuring states:
+
+State means a place in angularjs application. To configure it, use state() method of $stateProvider.
+
+$stateProvider.state("home",{
+url: "/home",
+templateUrl: "Template/home",
+controller: "homeController",
+controllerAs: "homeCtrl"});
+
+Instead of href use ui-sref attribute. ui-sref stands for state, not url. url used to create url for it. If url not provided, no url change
+<a ui-sref="home">Home</a>
+
+With ui-router parameters are optional by default, so we don't hv to place a ? after them.
+
+For caseinsensitive match, inject $urlMatcherFactoryProvider service into config function and call caseInsensitive(true) function.
+
+default route: inject $urlRouterProvider service into config function and use otherwise() function.
+
+To add custom data to a state in angular:
+use data property of the state which takes in javascript object
+
+
+html5Mode:same as ngRoute. 
+$locationProvider service.
+Since using ui-sref: no # symbols present.
+base href present
+
+nested states:
+
+.state("student",{
+}).state("studentDetails",{
+parent: "student";
+})
+
+OR
+
+.state("student",{
+}).state("student.studentDetails",{
+
+})
+
+In parent state,  set abstract to true, data available to all child states.

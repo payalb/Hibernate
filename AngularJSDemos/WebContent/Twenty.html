@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Route params</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-route.min.js"></script>
+<script type="text/javascript" src="scripts/twenty.js"></script>
+
+</head>
+<body ng-init="employees=[{name:'Ben', id:1},{name:'Dev', id:2}, {name:'Ashish', id:3},{name:'Anu', id:4},{name:'Divya', id:5}]">
+<div ng-controller="controllerOne as c1">
+{{c1.name}}
+<div ng-controller="controllerTwo as c2">
+{{c1.name}} - {{c2.name}}
+<div ng-controller="controllerThree as c3">
+{{c1.name}}- {{c2.name}} - {{c3.name}}
+</div>
+</div>
+</div>
+<!-- $ with parent is necessary -->
+</body>
+</html>

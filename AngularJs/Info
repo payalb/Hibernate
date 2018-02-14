@@ -1,0 +1,10 @@
+Features: 
+
+Open source
+Maintained by google
+follows mvc pattern
+Dependency injection, directives, modules, services, testable, templating
+
+HTML: plain document. Javascript: language understood by browser. No compilation needed.
+As functionalities getting added to the client side, lot of code in JS, HTML.
+Code needs to be structured: frameworks: backbone.js, reactjs, angularjs

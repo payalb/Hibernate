@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>StudentRegistration</display-name>
+  <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file>
+    
+  </welcome-file-list>
+  
+  <servlet>
+<servlet-name>LoginPage</servlet-name>
+<jsp-file>Login.html</jsp-file>  
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>LoginPage</servlet-name>
+  <url-pattern>/LoginPage</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+<servlet-name>NewUser</servlet-name>
+<jsp-file>CreateUser.jsp</jsp-file>  
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>NewUser</servlet-name>
+  <url-pattern>/NewUser</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+<servlet-name>RegisterUser</servlet-name>
+<jsp-file>RegisterUser.jsp</jsp-file>  
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>RegisterUser</servlet-name>
+  <url-pattern>/RegisterUser</url-pattern>
+  </servlet-mapping>
+  
+ 
+  
+  <servlet>
+<servlet-name>validate</servlet-name>
+<jsp-file>Success.jsp</jsp-file>  
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>validate</servlet-name>
+  <url-pattern>/ValidateUser</url-pattern>
+  </servlet-mapping> 
+</web-app>

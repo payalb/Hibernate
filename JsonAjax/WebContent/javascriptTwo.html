@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function Animal(){
+this.type="Dog";
+this.owner="Ravi";
+}
+
+Animal.prototype.setType = function (type){
+this.type= type;
+}
+Animal.prototype.setOwner = function (owner){
+this.owner= owner;
+}
+Animal.prototype.getType= function(){
+return this.type;
+}
+Animal.prototype.getOwner= function(){
+return this.owner;
+}
+
+var dog= new Animal();
+document.writeln(dog.getType());
+dog.setOwner("Tabu");
+document.writeln(dog.getOwner());;
+
+//inheritance
+
+function Cat(){
+Animal.call(this);
+this.sound="Meow";
+}
+
+Cat.prototype= new Animal();
+Cat.prototype.constructor= Cat;
+
+var cat= new Cat();
+cat.setType("Cat");
+cat.setOwner("Rahul");
+document.writeln(cat.getType());
+document.writeln(cat.getOwner());
+</script>
+</head>
+<body>
+
+</body>
+</html>

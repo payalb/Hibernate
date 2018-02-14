@@ -1,0 +1,20 @@
+form{
+	width:1000px;
+	margin:auto;
+	padding: 2px;
+	
+}
+
+.fieldName{
+	width: 200px;
+	float:left
+}
+
+.input{
+	width: 400px;
+}
+
+.warning{
+	width: 300px;
+	color: red;
+}

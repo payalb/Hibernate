@@ -1,0 +1,55 @@
+
+*{
+	font-size: 15px;
+	font-family: sans-serif;
+	text-align: justify;
+}
+body{
+	background-color: rgb(255,17,17);
+	background-image: url(C:\\Users\\Dell\\workspace\\CSS\\WebContent\\q2.png);
+	background-repeat: no-repeat;
+	/* background-position: center center; */
+	/* background-position: 50% 5%; */
+	background-attachment: fixed;
+	/* background-size: 100px 100px; */
+	background-size: 50% 50%;
+	background-origin: padding-box;
+	background-clip: content-box;
+	border: 4px black groove;
+	border-radius: 10px;
+	border-bottom-left-radius: 12px;
+	border-bottom-style: double;
+	border-bottom-width: thick;
+	border-bottom-right-radius: 12px;
+	border-top-left-radius: 24px;
+	border-top-right-radius: 34px;
+	padding: 25px;
+	margin:20px;
+}
+
+h3{
+	
+	text-shadow: 5px 10px 0px gray;
+}
+h4{
+	text-shadow : 5px 10px 2px #ff0000, -3px 6px 5px #0000ff;
+}
+
+.highlight{
+	padding: 10px;
+	margin: 10px;
+	text-indent: 20px;
+	font-family: serif;
+	font-weight: bold;
+	border: 2px solid lime;
+	background-color: rgb(0,85,0);
+	display: block;
+	width: 500px;
+}
+
+a:link{
+	color: fuchsia;
+}
+a:HOVER {
+	color: blue;
+}

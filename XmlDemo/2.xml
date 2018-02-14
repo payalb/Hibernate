@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="2.css"?>
+<FirstTag>
+This is the second XML doc
+<!--  <? means processing instruction  -->
+</FirstTag>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Flexslider</title>
+<script src="scripts/angular.min.js"></script>
+<script>
+angular.module("myApp",['angular-flexslider']).controller("myController", function($scope){
+$scope.items=[{id:1, img:'images/OnlineTraining.jpg', title:'Online Trainings'},
+{id:2, img:'images/ClassroomTraining.jpg', title:'Classroom Training'},
+{id:3, img:'images/Projects.png', title:'Buy a Project'},{id:4, img:'images/Syllabus.jpg', title:'Course Syllabus'}];
+
+});
+</script>
+</head>
+<body  ng-controller="myController">
+ <flex-slider slide="item in items track by item.id" animation="slide">
+	  	<li>
+            <img ng-src="{{item.img}}"/>
+                  {{item.title}}
+	    </li>
+	  </flex-slider>
+   <!--  <a href="javascript:;" data-ng-click="update()">Update List</a>
+    <ul>
+        <li data-ng-repeat="item in items track by item.id">{{item.name}}</li>
+    </ul> -->
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+Module is a container for different parts of applications like controller, filters, services, directives... Just like main method
+
+
+angular.module("myModule1",[]).constant("name", "Payal");
+
+Adding this module and injecting this constant in another module:
+
+angular.module("myModule2",[myModule1]).controller("myController", function($scope, name){
+
+});

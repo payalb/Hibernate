@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Custom Directives</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script>
+angular.module("myApp",[]).directive("myFirstDirective", function(){
+return {
+template: "Hello World!",
+restrict: 'EA'
+}
+});
+</script>
+</head>
+<body>
+	1) <div my-first-directive></div>
+	<br>
+	2)
+	<my-first-directive></my-first-directive>
+</body>
+</html>

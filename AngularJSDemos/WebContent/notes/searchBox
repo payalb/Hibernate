@@ -1,0 +1,9 @@
+Search: <input type="text" placeholder="Search.." ng-model="search.name">
+<ul>
+<li ng-repeat="employee in employees| filter: search">{{employee.name +" - "+ employee.marks}}</li>
+</ul>
+
+
+searches for pattern throughout the string.
+search.$ : filters anything we type, based on variables.
+search.name: filters only based on name.

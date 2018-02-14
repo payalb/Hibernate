@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="9.xsl"?>
+<items>
+<item available="no">
+<name>Mocha</name>
+<type>Coffee</type>
+</item>
+<item available="yes">
+<name>Decaf</name>
+<type>Coffee</type>
+</item>
+<item available="no">
+<name>Raspberry Ginger</name>
+<type>Tea</type>
+</item>
+<item available="yes">
+<name>Earl Grey</name>
+<type>Tea</type>
+</item>
+
+</items>

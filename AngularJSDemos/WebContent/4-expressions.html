@@ -1,0 +1,26 @@
+<!-- Can use {{}} for expressions -->
+
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<meta charset="ISO-8859-1">
+<title>Expressions</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script>
+angular.module("myModule", []).controller("myController", function($scope){
+	$scope.name="Priyasha";
+})
+</script>
+</head>
+<body data-ng-controller="myController">
+Please enter your name: <input type="text" ng-model="message" /><br>
+Hello <div ngBind="message"></div>
+<div data-ng-bind="3+4"></div>
+{{3+4}}<br>
+Hello to you to <span x-ng-bind="name"></span>!
+<br>
+How r u {{name}}?<br>
+Hello to you to <span ng:bind="name"></span>!
+<strong>Note:</strong> Div automatically provides a linebreak. If we don't want that, use span instead.
+</body>
+</html>

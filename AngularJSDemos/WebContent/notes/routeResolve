@@ -1,0 +1,14 @@
+If we don't want the page to be loaded until full route is resolved, use this resolve property which takes object literal 
+whose value is a function. The resolve property can have one or more promises that must resolve before transitioning to new route. 
+The property names can then be injected into the controller , so the controller doesn't have to fetch the data.
+
+this is said to be conditional routing. If function returns value, then routed to new location. Prevents page from diirectly being routed when we hit url.
+
+	resolve: {
+					homeMessage: function($http){
+						var url="http://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=JSON_CALLBACK";
+						return  $http.jsonp( url).success(function(json) {
+							return json.found;
+						});
+					}
+				}

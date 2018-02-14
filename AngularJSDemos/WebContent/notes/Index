@@ -1,0 +1,16 @@
+To find the index of an item in the collection:
+1) Use $index property 
+2) To get index of parent element: use $parent.$index or use ng-init="parentIndex=$index"
+
+
+	<ul>
+		<li ng-repeat="i in arr track by $index"> {{$index+1}} </li>
+		
+	</ul>
+	
+	
+	The below code will print "Hello" the number of times the size of arr.
+	<ul>
+		<li ng-repeat="i in arr track by $index"> Hello </li>
+		
+	</ul>

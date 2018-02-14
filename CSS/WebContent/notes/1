@@ -1,0 +1,40 @@
+Cascading stylesheet: look and formatting doc. Add style: color, font, height, width, background color...
+
+<style>
+
+h1, h2{
+
+}
+
+</style>
+To apply more than one class, provide space : <h1 class="bold underline"></h1>
+font-family: font type
+size: px: pixel, %, em, keywords
+
+css inheritance:
+
+html -> head, body
+body -> p, h1, h2, h3, h4, h5,
+
+To underline: text-decoration: underline;
+
+font-family: verdana, arial, genava, arial black; will load font as per order. if verdana not found, will load arial.
+
+font-weight: bold, normal, lighter, bolder
+
+external stylesheet: <link rel="stylesheet" href="css/style.css" >
+inline: <h1 style="color:red;font-size:25px;">
+internal: <style></style>
+
+text-decoration: underline, overline, text-through,none
+
+font-style: italic, oblique, 
+
+color: rgb(,,);
+#ffcf79: hexcode value, can get after converting rgb to hex
+
+font-size: % is relative unit of measure. If body has a font-size of 25px; and heading of 150% => h1 has font of 150% of 25px.
+em: same as %: 1.2em means 1.2*25
+xx-small, x-small, small, medium, large, x-large, xx-large
+
+line-height: It is in em or %age. Relative to font-size.

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- schema instance namespace -->
+<BusinessCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="11.xsd">
+<Name>Shreya Malik</Name>
+<phone type="work" primary="primary">+91-7326723632</phone>
+<phone type="home">+91-32463743</phone>
+<phone type="fax">+91-34746364</phone>
+<email>shreya.malik@gmail.com</email>
+</BusinessCard>

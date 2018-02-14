@@ -1,0 +1,32 @@
+
+BusinessCard{
+font-family: Arial, helvetica, sans-serif;
+background-color: yellow;	
+width: 300px;
+display: block;
+padding: 10pt;
+border: 10px solid grey;
+margin: 5px;
+text-align: left;
+}
+
+Name{
+color: maroon;
+font-weight: bold;
+display: block;
+font-size: 140%;
+margin-bottom : 3%;
+}
+
+phone{
+font-weight: bold;
+display: block;
+font-size: 90%;
+}
+
+email{
+font-weight: bold;
+display: block;
+font-size: 90%;
+margin-top: 3%;
+}

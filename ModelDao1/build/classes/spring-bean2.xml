@@ -1,0 +1,43 @@
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean name="ht" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sf" />
+	</bean>
+
+	<bean id="sf"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.java.model.Student</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="ds" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost/postgres" />
+		<property name="password" value="postgres" />
+		<property name="username" value="postgres" />
+		<property name="maxActive" value="20" />
+		<property name="maxIdle" value="15" />
+		<property name="maxWait" value="30" />
+	</bean>
+
+	<bean id="dao" class="com.java.dao.MyDaoImpl2">
+		<property name="ht" ref="ht"></property>
+	</bean>
+
+	<bean id="bo" class="com.java.business.StudentBOImpl">
+		<property name="dao" ref="dao"></property>
+	</bean>
+
+
+</beans>

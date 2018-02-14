@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Custom Filters</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script>
+angular.module("myApp",[]).filter("myFilter", function() {
+	
+	var value= function(number, base){
+		
+		var number1= parseInt(number, 10);
+		var base1= parseInt(base,10);
+		
+		if(isNaN(number1)|| isNaN(base1)){
+			return "Enter proper decimal values: for base b/w 2 and 36";
+		}
+		
+		var value= number1.toString(base1);
+		return value;
+	}
+	
+	
+	return value;
+}).controller("myController", function() {
+	
+})
+
+</script>
+</head>
+<body ng-controller="myController">
+
+Enter the number : <input type="text" ng-model="number"><br>
+Enter the base : <input type="text" ng-model="base"><br>
+
+{{number| myFilter: base}}
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Accordion example</title>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div id="accordion" class="panel-group">
+		<div class="panel panel-primary" id="panel1">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a href="#panelBody1" data-toggle="collapse"
+						data-target="#panelBody1">Flower <span
+						class="glyphicon glyphicon-minus-sign"></span>
+					</a>
+				</h4>
+			</div>
+
+			<div class="panel-collapse collapse in" id="panelBody1">
+				<div class="panel-body">
+					<img class="img-responsive" src="css/1.jpg" />
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-primary" id="panel2">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a href="#panelBody2" data-toggle="collapse"
+						data-target="#panelBody2">Desert <span
+						class="glyphicon glyphicon-plus-sign"></span>
+					</a>
+				</h4>
+			</div>
+			<div class="panel-collapse collapse" id="panelBody2">
+				<div class="panel-body">
+					<img class="img-responsive" src="css/2.jpg" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(
+				function() {
+					$('.collapse').on(
+							'shown.bs.collapse',
+							function() {
+								$(this).parent().find('.glyphicon-plus-sign')
+										.removeClass('glyphicon-plus-sign')
+										.addClass('glyphicon-minus-sign');
+
+							}).on(
+							'hidden.bs.collapse',
+							function() {
+								$(this).parent().find('.glyphicon-minus-sign')
+										.removeClass('glyphicon-minus-sign')
+										.addClass('glyphicon-plus-sign');
+
+							});
+				});
+	</script>
+</body>
+</html>

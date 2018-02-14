@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="3.css"?>
+
+<BusinessCard>
+<Name>Shreya Malik</Name>
+<phone type="work">+91-7326723632</phone>
+<phone type="home">+91-32463743</phone>
+<phone type="fax">+91-34746364</phone>
+<email>shreya.malik@gmail.com</email>
+</BusinessCard>

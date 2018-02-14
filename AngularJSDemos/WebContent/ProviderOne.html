@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+angular.module("mod1", []).provider("EventTrackingProvider", function(){
+
+var trackingUrl="/track";
+
+this.setTrackingUrl= function(url){
+	trackingUrl = url;
+}
+
+$get : function($http){
+
+	var trackedEvents ={};
+	
+	return{
+	
+	event: function(eventName){
+		
+	
+	
+	}
+	
+	};
+
+}
+
+
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

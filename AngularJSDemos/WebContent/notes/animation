@@ -1,0 +1,74 @@
+include angular-animate.js
+add it as dependency : ['ngAnimate']
+
+By-default enabled with core directives like ngIf, ngShow, ngClass, ngRepeat. 3 ways to perform animation:
+1) css3 transition: allow html element to change from one style to another
+2) css3 animation
+3) javascript
+
+triggers: adds css classes and let browser take care of rest:
+1) none
+2) .ng-enter: starting animation for enter
+3) .ng-enter-active: terminating animation for enter
+4) .ng-leave: starting animation for leave
+5) .ng-leave-active: terminating animation for leave
+
+
+ngIf triggers enter and leave.
+ngClass: -add and -remove: starting animation, -add-active, -remove-active: terminating animation
+
+
+As ngRepeat does its thing, each time a new item is added into the list, ngRepeat will add a ng-enter class name to the element that is being added. When removed it will apply a ng-leave class name and when moved around it will apply a ng-move class name.
+AngularJS also pays attention to CSS class changes on elements by triggering the add and remove hooks. This means that if a CSS class is added to or removed from an element then an animation can be executed in between, before the CSS class addition or removal is finalized
+
+.css-class-add, .css-class-remove {
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.css-class,
+.css-class-add.css-class-add-active {
+  color: red;
+  font-size:3em;
+}
+
+.css-class-remove.css-class-remove-active {
+  font-size:1.0em;
+  color: black;
+}
+
+Which directives support animations?
+
+A handful of common AngularJS directives support and trigger animation hooks whenever any major event occurs during its life cycle. The table below explains in detail which animation events are triggered
+
+
+Directive
+
+Supported Animations
+
+
+ngRepeat enter, leave, and move 
+ngView enter and leave 
+ngInclude enter and leave 
+ngSwitch enter and leave 
+ngIf enter and leave 
+ngClass or  add and remove 
+ngShow & ngHide add and remove (the ng-hide class value) 
+
+
+when an animation occurs, two sets of CSS classes are added to the element:
+1.A "starting" class that represents the style at the beginning of the animation.
+2.An "active" class that represents the style at the end of the animation.
+
+
+
+my-class.ng-animate {
+  transition: 0s;
+}
+
+By setting transition: 0s, ngAnimate will ignore the existing transition styles, and not try to animate them (Javascript animations will still execute, though).
+
+
+uses of animation:
+1) narration
+2) encoding
+3) transition

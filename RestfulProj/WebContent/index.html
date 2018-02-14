@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="webapi/messages/print" method="post">
+<h1> Hello,  index page!!!</h1>
+ID : <input type="text" name="id"/>
+<button type="submit" onclick="makePutReq()" >submit</button>
+</form>
+</body>
+
+<script type="text/javascript">
+function makePutReq(){
+	var xlr=new XMLHttpRequest();
+	xlr.open('PUT', 'webapi/messages/print', true);
+	xlr.setRequestHeader('Content-Type', 'text-plain');
+	xlr.send(null);
+}
+
+</script>
+</html>

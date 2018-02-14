@@ -1,0 +1,62 @@
+display: table, table-row, table-cell
+
+combine selectors: h1, h2, .para
+
+descendant selector: select element inside other: div p => para inside div.
+
+<blockquote class="classOne"><b>Some text </b></blockquote>
+
+child selector: blockquote.classOne>b to get direct child element.
+
+A -> B -> C. C is not the child of A
+
+last rule in css takes preference.
+
+siblings: h2+p => paragraphs with h2 as adjacent sibling are selected.
+h2~p => all paragraphs that are sibling of h2
+
+*: select every element on webpage
+
+attribute selector: p[lang], a[href].
+
+To associate value of attribute with element: p[lang="fr"]. select all p elements whose value of lang is fr..
+whose value starts with fr => p[lang^="fr"]
+whose value ends with o: p[lang$="o"]
+has us anywhere in text: p[lang*="us"]
+
+#right p:nth-child(even){
+}
+
+#right p:nth-child(odd){
+}
+
+#right p:nth-child(3n){
+}
+
+#right p:nth-child(3){
+}
+
+#right p:nth-child(3n+4){
+}
+
+:not(p){
+}
+
+For not, p should be part of css as it is a selector.
+
+p::first-letter{
+font-weight: bold;
+font-size: 21px;
+}
+
+above uses 2 colon
+
+p:first-line{
+
+}
+above uses 1 colon
+
+opacity: 0 to 1.0, 1 means low opacity/ not transparent: default, 0.0 will make it fully transparent hence invisible
+
+
+linear gradients: 

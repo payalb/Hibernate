@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Pop-Over example</title>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<button id="btn1" data-toggle='popover' title="PopOver title"
+data-content="Pop over content, By default visible on click"
+data-trigger="hover"
+>Click Me!</button>
+
+<button id="btn2" data-toggle='popover' title="Tulip"
+data-content="<img src='css/1.jpg' class='img-responsive' width='200px' height='200px'/>"
+data-trigger="hover" data-html='true' data-placement='bottom'
+>Image Btn</button>
+	<script src="bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn1').popover();
+		$('#btn2').popover();
+	});
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Registration Form</h1>
+<form method="get" action="./Demo1.html">
+<label>Name: </label>
+<input type="text" id="username" maxlength="20" pattern="[A-Za-z]*"/><br>
+<label>Password:</label>
+<input type="password" id="password" pattern="[A-Z][0-9]{3}[a-z]*"/><br>
+<label>DOB:</label>
+<input type="date" /><br>
+<label>Age:</label>
+<input type="number" min="20" max="50" required/><br>
+
+<label>Subject:</label>
+<input type="radio" name="subject" value="Java" checked>Java
+<input type="radio" name="subject" value="J2ee">J2ee
+<input type="radio" name="subject" value="Html">HTML
+<br>
+<label>Language:</label>
+<input type="checkbox" name="language" value="Hindi" checked>Hindi
+<input type="checkbox" name="language" value="English">English
+<input type="checkbox" name="language" value="French">French
+<br>
+<label>Select movies:</label>
+<select name="movies" multiple >
+<optgroup label="-----Hindi-----">
+<option>DDLJ</option>
+<option>Hum</option>
+</optgroup>
+<optgroup label="----English----">
+<option>Ice Age</option>
+<option>Ratatoulie</option>
+</optgroup>
+</select>
+<br>
+<label>Comments:</label>
+<textarea rows="5" cols="20"></textarea><br>
+<label>Resume :</label>
+<input type="file"><br>
+<input type="reset" value="Reset Page" disabled>
+<button ><img src="image12.png" width="50px" height="30px"/></button>
+<button>Click here!</button>
+<label>Email:</label>
+<input type="email"/><br/>
+<input type="hidden" name="secret key" value="sh5"/>
+<input type="submit" id="Submit" value="Submit Form!"/>
+
+<video src="C:\Users\Dell\Downloads\1.mp4" controls autoplay></video>
+
+<audio src="" controls autoplay></audio>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+"records" : [
+{ "name" : "Payal" ,
+ "marks" : "88" },
+{ "name" : "Ashu" ,
+ "marks" : "45" },
+{ "name" : "Shweta" ,
+ "marks" : "78" },
+{ "name" : "Aditi" ,
+ "marks" : "48" }
+]
+}

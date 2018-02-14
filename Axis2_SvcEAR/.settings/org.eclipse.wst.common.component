@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Axis2_SvcEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="Axis2_Svc.war" deploy-path="/" handle="module:/resource/Axis2_Svc/Axis2_Svc">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Axis2_Client.war" deploy-path="/" handle="module:/resource/Axis2_Client/Axis2_Client">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Axis2_Client1.war" deploy-path="/" handle="module:/resource/Axis2_Client1/Axis2_Client1">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ApacheCXFWebService.war" deploy-path="/" handle="module:/resource/ApacheCXFWebService/ApacheCXFWebService">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="JerseyWebService.war" deploy-path="/" handle="module:/resource/JerseyWebService/JerseyWebService">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

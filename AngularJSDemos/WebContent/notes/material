@@ -1,0 +1,5 @@
+http://tutlane.com/tutorial/angularjs/
+
+download lib: https://code.angularjs.org/1.5.8/
+
+1) ng-repeat= "i in [1,2]": will do 2 iterations with value of i as 1 and 2.

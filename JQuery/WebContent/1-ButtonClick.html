@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Button click event</title>
+<script>
+window.onload= function(){
+document.getElementById("button1").addEventListener("click", myListener, false);
+}
+function myListener(){
+
+alert(" Button Clicked!");
+}
+
+</script>
+</head>
+<body>
+<input type="button" id="button1" value="Click Me"/>
+</body>
+</html>

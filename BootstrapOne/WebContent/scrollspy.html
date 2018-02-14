@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Scrollspy</title>\
+<style>
+body{
+position: relative;
+}
+</style><link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body data-spy="scroll" data-target="#nav" data-offset="10">
+
+	<nav id="nav" class="navbar  navbar-inverse navbar-fixed-top" >
+		<div class="container">
+			<ul class="nav navbar-nav nav-pills">
+				<li class="active"><a href="#divDesert">Desert</a></li>
+				<li><a href="#divLightHouse">Lighthouse</a></li>
+				<li><a href="#divTulips">Tulips</a></li>
+				<li class="dropdown"><button class="dropdown-toggle" data-toggle="dropdown">
+						Animals <span class="caret"></span>
+					</button>
+
+					<ul class="dropdown-menu" id="menu">
+						<li><a href="#divJellyFish">JellyFish</a></li>
+						<li><a href="#divPenguins">Penguins</a></li>
+					</ul></li>
+			</ul>
+
+		</div>
+	</nav>
+	<br><br>
+	<div class="container">
+		<div id="divDesert">
+			<h1>Desert</h1>
+			<img src="css/2.jpg" class="img-responsive" />
+		</div>
+
+		<div id="divLightHouse">
+			<h1>LightHouse</h1>
+			<img src="css/6.jpg" class="img-responsive" />
+		</div>
+
+		<div id="divTulips">
+			<h1>Tulips</h1>
+			<img src="css/8.jpg" class="img-responsive" />
+		</div>
+
+		<div id="divJellyFish">
+			<h1>JellyFish</h1>
+			<img src="css/4.jpg" class="img-responsive" />
+		</div>
+
+		<div id="divPenguins">
+			<h1>Penguins</h1>
+			<img src="css/7.jpg" class="img-responsive" />
+		</div>
+
+	</div>
+	
+	<script src="bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript">
+	$(document).ready(function(){
+		$(body).scrollspy({
+			target: "#nav";
+			offset: 10;
+			
+		});
+	});
+	
+	</script> -->
+</body>
+</html>

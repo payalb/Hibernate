@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Arrays</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var books = [ "maths", "english", "hindi" ];
+		document.write(books[2]);
+		document.write("<br>");
+		var myArr = new Array(10);
+		myArr[2] = "Maths";
+		document.write(myArr.length);
+		document.write("<br>");
+		for (var i = 0; i < myArr.length; i++) {
+			document.write(myArr[i]);
+			document.write("<br>");
+		}
+		
+		var myArray1= new Array("english","hindi","Maths");
+		myArray1.shift();
+		for (var i = 0; i < myArray1.length; i++) {
+			document.write(myArray1[i]);
+			document.write("<br>");
+		}
+		
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Custom Directives- Link</title>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<style type="text/css">
+.colorRed{
+color: red;
+}</style>
+<script>
+angular.module("myApp", []).controller("myController", function($scope){
+	$scope.controllerProperty= 'Payal1';
+	
+}).directive("clickableLabel", function(){
+	
+	function clickMethod ($scope, elem, args){
+		$scope.message="Hello World";
+		
+		/* elem.bind("click", function(){		
+			alert("Clicked!!"); 
+		}); */
+		
+		$scope.changeName= function(){
+			
+			$scope.message= $scope.controllerProperty;
+		}
+	};
+	
+	return{
+	
+	template: '<div><h1 ng-class="{colorRed: true}">Hello there</h1><p>hdjshfjsdhfksdhfjdshdhfhdsjhjkhjhjf</p></div><span ng-click="changeName()">{{message}}</span>',
+	restrict: "EA",
+	link: clickMethod,
+	scope: {}
+	}
+})
+</script>
+</head>
+<body ng-controller="myController">
+<clickable-label></clickable-label><br><br>
+<clickable-label></clickable-label><br><br>
+<clickable-label></clickable-label><br><br>
+<div clickable-label></div><br>
+<div clickable-label></div>
+<h2>
+Test with changing scope values to true, false, {}. Right now it is set to {}. So not inheriting controller properties.</h2>
+</body>
+</html>

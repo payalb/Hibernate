@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function openNewWindow(){
+//window.open("http://www.google.com");
+// window.open("http://www.google.com","_self");
+var wind= window.open("http://www.google.com","_blank");
+if(wind){
+wind.focus();
+	wind.moveTo(100, 100);
+	}
+}
+
+function move(){
+
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="openNewWindow()" value="Open">
+<input type="button" onclick= "move()"/>
+</body>
+</html>

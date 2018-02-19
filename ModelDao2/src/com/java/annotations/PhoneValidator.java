@@ -5,16 +5,19 @@ import java.lang.annotation.Annotation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class PhoneValidator implements ConstraintValidator{
+public class PhoneValidator implements ConstraintValidator<Phone, String>{
+
+
 
 	@Override
-	public void initialize(Annotation arg0) {
+	public void initialize(Phone constraintAnnotation) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public boolean isValid(Object arg0, ConstraintValidatorContext arg1) {
+	public boolean isValid(String value, ConstraintValidatorContext context) {
+		// TODO Auto-generated method stub
 		return true;
 	}
 

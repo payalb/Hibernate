@@ -3,21 +3,19 @@ package com.java.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.java.model.Student;
 
 @Repository
 public class MyDaoImpl2 implements MyDao {
-
 	@Autowired
 	private HibernateTemplate ht;
 
 	public int save(Student st) {
-
+		System.out.println("Is write mode disbaled"+ht.isCheckWriteOperations());
 		int i = (Integer) ht.save(st);
-
 		return i;
 	}
 

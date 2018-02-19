@@ -16,6 +16,7 @@ public class EmployeeController {
 	@Autowired
 	private StudentBO bo;
 
+	
 	@RequestMapping(value = "/empsave", method = RequestMethod.POST)
 	public ModelAndView processReq(@ModelAttribute Student st) {
 		ModelAndView mv = new ModelAndView("Result");

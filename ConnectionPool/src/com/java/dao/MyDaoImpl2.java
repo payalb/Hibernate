@@ -1,8 +1,12 @@
 package com.java.dao;
 
 import java.util.List;
-
+import org.hibernate.HibernateException;
+import org.hibernate.criterion.CriteriaQuery;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.engine.spi.TypedValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -17,9 +21,7 @@ public class MyDaoImpl2 implements MyDao {
 	private HibernateTemplate ht;
 
 	public int save(Student st) {
-
 		int i = (Integer) ht.save(st);
-
 		return i;
 	}
 
@@ -43,8 +45,11 @@ public class MyDaoImpl2 implements MyDao {
 
 	@Override
 	public List<Student> findByName(String name) {
-		
-		return null;
+		DetachedCriteria dc= DetachedCriteria.forClass(Student.class);
+		Criterion cr= Restrictions.eq("name", name);
+		dc.add(cr);
+		List<Student> st=	(List<Student>) ht.findByCriteria(dc);
+		return st;
 	}
 
 	@Override

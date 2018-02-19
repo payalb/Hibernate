@@ -1,4 +1,4 @@
-/*package com.java.dao;
+package com.java.dao;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -63,4 +63,3 @@ public class MyDaoImpl implements MyDao{
 	
 
 }
-*/

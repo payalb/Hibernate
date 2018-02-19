@@ -2,6 +2,10 @@ package com.java.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.support.TransactionCallback;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import com.java.dao.MyDao;
 import com.java.model.Student;
@@ -12,9 +16,16 @@ public class StudentBOImpl implements StudentBO{
 	@Autowired
 	private MyDao dao;
 	
+	/*@Autowired
+	TransactionTemplate transactionTemplate;*/
 	@Override
 	public int createStudent(Student st){
-		return dao.save(st);
+		//transactionTemplate.setPropagationBehavior(0);
+		//transactionTemplate.execute( status-> {
+					dao.save(st);
+			//		return 1;
+		//});
+		return 1;
 	}
 
 	@Override

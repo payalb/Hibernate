@@ -1,13 +1,12 @@
-<beans xmlns="http://www.springframework.org/schema/beans" 
- xmlns:context="http://www.springframework.org/schema/context" 
- xmlns:mvc="http://www.springframework.org/schema/mvc"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.springframework.org/schema/beans
- http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/context
- http://www.springframework.org/schema/context/spring-context.xsd
- http://www.springframework.org/schema/mvc
- http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
  <context:annotation-config/>
 <!-- To activate all annotations -->
 <context:component-scan base-package="com.java"/>
@@ -17,12 +16,13 @@ http://www.springframework.org/schema/context
 <property name="prefix" value="/WEB-INF/"/>
 </bean>
 
-	<bean name="ht" class="org.springframework.orm.hibernate3.HibernateTemplate">
-		<property name="sessionFactory" ref="sf" />
+	<bean name="ht"  depends-on="sessionFactory" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="checkWriteOperations" value="false"></property>
 	</bean>
 
-	<bean id="sf"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="ds"></property>
 		<property name="hibernateProperties">
 			<props>
@@ -38,14 +38,22 @@ http://www.springframework.org/schema/context
 		</property>
 	</bean>
 
-	<bean name="ds" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
-		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://localhost/postgres" />
-		<property name="password" value="postgres" />
-		<property name="username" value="postgres" />
-		<property name="maxActive" value="20" />
-		<property name="maxIdle" value="15" />
-		<property name="maxWait" value="30" />
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations">
+		<list>
+			<value>classpath:database.properties</value>
+		</list>
+	</property>
+</bean>
+
+	<bean name="ds" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${db.driverClassName}" />
+		<property name="url" value="${db.url}" />
+		<property name="password" value="${db.password}" />
+		<property name="username" value="${db.username}" />
+		<property name="maxTotal" value="${db.maxTotal}" />
+		<property name="maxIdle" value="${db.maxIdle}" />
+		<property name="maxWaitMillis" value="${db.maxWaitMillis}" />
 	</bean>
 
 </beans>

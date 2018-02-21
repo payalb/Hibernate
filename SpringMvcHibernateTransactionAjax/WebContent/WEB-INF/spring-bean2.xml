@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+ <context:annotation-config/>
+<!-- To activate all annotations -->
+<context:component-scan base-package="com.java"/>
+<tx:annotation-driven transaction-manager="transactionManager"/>
+
+<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	<constructor-arg name="sessionFactory" ref="sessionFactory"></constructor-arg>
+</bean>
+
+<mvc:annotation-driven/>
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="suffix" value=".jsp"/>
+<property name="prefix" value="/WEB-INF/"/>
+</bean>
+
+	<bean name="ht"  depends-on="sessionFactory" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<!-- <property name="checkWriteOperations" value="false"></property> -->
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.java.model.Student</value>
+			</list>
+		</property>
+	</bean>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations">
+		<list>
+			<value>classpath:database.properties</value>
+		</list>
+	</property>
+</bean>
+
+	<bean name="ds" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${db.driverClassName}" />
+		<property name="url" value="${db.url}" />
+		<property name="password" value="${db.password}" />
+		<property name="username" value="${db.username}" />
+		<property name="maxTotal" value="${db.maxTotal}" />
+		<property name="maxIdle" value="${db.maxIdle}" />
+		<property name="maxWaitMillis" value="${db.maxWaitMillis}" />
+	</bean>
+
+</beans>
